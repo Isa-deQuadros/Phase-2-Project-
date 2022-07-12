@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components'
 
 
@@ -15,15 +15,34 @@ const Container = styled.div`
 
 
 function App(){
+const [gameCardData, setGameCardData] = useState([])
+
+useEffect(()=>{
+  fetch("http://localhost:3002/gameCard")
+  .then(res=> res.json())
+  .then((fetchedData)=>{
+  setGameCardData([...fetchedData])
+  })
+  },[])
+
+
   
   return (
     <Container>
 
       < Header />
       <Profile />
-      <MainContainer />
+      <MainContainer gameCardDataFromApp={gameCardData} />
 
     </Container>
   )
 }
 export default App
+
+
+//App
+//Header
+  //NavBar
+//Profile
+//MainContainer
+  //NewGameForm  //GameCard

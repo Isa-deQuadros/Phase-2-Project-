@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import React, {useState} from "react"
 import GameCard from "./GameCard";
 
 
@@ -42,10 +42,17 @@ const NewGameFormButton = styled.button`
 
 `
 
-function GamesContainer(){
+function GamesContainer({gameCardDataFromApp}){
+    console.log("gamecontainer data:", gameCardDataFromApp)
+    const [title, setTitle] = useState("Title of Game")
+
+    function renderGame(){
+        
+    }
+
     return(
         <Container>
-            <h2> Title of Game </h2>
+            <h2> {title} </h2>
             <NewGameFormButton> Click To Add New Game</NewGameFormButton> 
             <br/>
             <div className="DataDisplay">
@@ -69,7 +76,16 @@ function GamesContainer(){
                 </div>
             </div>
             <div className="GameList">
-                    <h4> Game List</h4>
+                { gameCardDataFromApp.map((mappedArrayOfGames)=>{
+                    return(  
+                    <h4> 
+                        <GameCard 
+                        gameCardDataFromContainer={mappedArrayOfGames}
+                        key={mappedArrayOfGames.id} /> 
+                    </h4>
+                    )
+                })
+                }
                 </div>
 
 
