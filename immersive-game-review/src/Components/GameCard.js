@@ -15,17 +15,17 @@ const Container = styled.div`
     flex-wrap: wrap; 
     }
     .card {
-    width: calc(33% - 2rem);
+    // width: calc(33% - 2rem);
     }
     }
     @media (min-width: 1024px) {
         .card {
-        width: calc(25% - 2rem);
+        // width: calc(25% - 2rem);
     }
     }
     @media (min-width: 1200px) {    
         .card {
-        width: calc(20% - 2rem);
+        // width: calc(20% - 2rem);
         }
     }
 
