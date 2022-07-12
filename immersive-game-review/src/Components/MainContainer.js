@@ -45,11 +45,13 @@ const NewGameFormButton = styled.button`
 function GamesContainer({gameCardDataFromApp}){
     console.log("gamecontainer data:", gameCardDataFromApp)
     const [title, setTitle] = useState("Title of Game")
-    const [trailer, setTrailer] = useState("Trailer")
+    const [reviews, setReviews] = useState("Reviews")
 
-    function renderGame(){
-        
+    function renderGame(gameName, gameReview){
+        setTitle(gameName)
+        setReviews(gameReview)
     }
+    
 
     return(
         <Container>
@@ -73,6 +75,9 @@ function GamesContainer({gameCardDataFromApp}){
                 </div>
                 < div className="Reviews">
                     <h4> Reviews: </h4>
+                    <p>{reviews.first}</p>
+                    <p>{reviews.second}</p>
+                    <p>{reviews.third}</p>
                     {/* some math function that turns the percentage into x number of controllers */}
                 </div>
             </div>
@@ -82,6 +87,7 @@ function GamesContainer({gameCardDataFromApp}){
                     <h4> 
                         <GameCard 
                         gameCardDataFromContainer={mappedArrayOfGames}
+                        renderGame={renderGame}
                         key={mappedArrayOfGames.id} /> 
                     </h4>
                     )

@@ -33,17 +33,18 @@ const Container = styled.div`
 
 `
 
-function GameCard({gameCardDataFromContainer}){
+function GameCard({gameCardDataFromContainer, renderGame}){
     console.log("gamecard data:", gameCardDataFromContainer)
     return(
         <Container>
-            <div className="card">
+            <div onClick={()=>renderGame(gameCardDataFromContainer.name, gameCardDataFromContainer.reviews)}
+            className="card">
                 <img 
                 className="card_image"
                 src={gameCardDataFromContainer.imageURL}></img>
                 <h4> {gameCardDataFromContainer.name} </h4>
                 <p> {gameCardDataFromContainer.rating} </p>
-                <p> {gameCardDataFromContainer.description}</p>
+                <p classList="description"> {gameCardDataFromContainer.description}</p>
                 <button> Play Soundtrack ⏯️ </button>
 
             </div>
