@@ -45,6 +45,7 @@ const NewGameFormButton = styled.button`
 function GamesContainer({gameCardDataFromApp}){
     console.log("gamecontainer data:", gameCardDataFromApp)
     const [title, setTitle] = useState("Title of Game")
+    const [trailer, setTrailer] = useState("Trailer")
 
     function renderGame(){
         
