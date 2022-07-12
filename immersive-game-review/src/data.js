@@ -11,7 +11,7 @@ const gameCard = [
         trailer: " https://youtu.be/MeVFrt7BUyw",
         reviews: {
             first: "The music for this game is amazing. Its very interactive and if you love a good story-line and narration this is the game for you. It does at times require very specific key-stroke sequences which can take several tries (ie. hours) to figure out, but it’s definitely worth it. The awesome music also means you don't notice the time fly by.",
-            second: "",
+            second: " ",
             third: "",
         }
     },
@@ -33,7 +33,7 @@ const gameCard = [
     },
     {
         name: "Spyro Reignited Trilogy",
-        releaseYear: "2018",
+        releaseYear: 2018,
         score: "https://vgmsite.com/soundtracks/spyro-reignited-trilogy-vol.1-spyro-the-dragon/nhbmfwqqrx/01%20Main%20Theme.mp3",
         genre: "3D Platformer, Adventure, Shooter, Fighter",
         platform: "Nintendo Switch, Microsoft Windows, Xbox One",
