@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import React, {useState} from "react"
 import GameCard from "./GameCard";
+import NewGameForm from "./NewGameForm";
 
 
 const Container = styled.div`
@@ -42,21 +43,27 @@ const NewGameFormButton = styled.button`
 
 `
 
-function GamesContainer({gameCardDataFromApp}){
-    console.log("gamecontainer data:", gameCardDataFromApp)
+function GamesContainer({gameCardDataFromApp, functionForForm}){
+    
     const [title, setTitle] = useState("Title of Game")
-    const [reviews, setReviews] = useState("Reviews")
+    const [reviews, setReviews] = useState("")
+    const [formDisplay, setFormDisplay] = useState(false)
 
-    function renderGame(gameName, gameReview){
+    function renderGame(gameName, gameReview){ 
         setTitle(gameName)
         setReviews(gameReview)
+    }
+
+    function displayForm(){
+        setFormDisplay(!formDisplay)
     }
     
 
     return(
         <Container>
             <h2> {title} </h2>
-            <NewGameFormButton> Click To Add New Game</NewGameFormButton> 
+            <NewGameFormButton onClick={displayForm}> Click To Add New Game</NewGameFormButton> 
+            {formDisplay ? <NewGameForm functionForForm={functionForForm}/> : null }
             <br/>
             <div className="DataDisplay">
                 < div className="MusicTrailer">
