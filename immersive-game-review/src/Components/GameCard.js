@@ -43,7 +43,7 @@ function GameCard({gameCardDataFromContainer, renderGame}){
                 className="card_image"
                 src={gameCardDataFromContainer.imageURL}></img>
                 <h4> {gameCardDataFromContainer.name} </h4>
-                <p> {gameCardDataFromContainer.rating} </p>
+                <p> Rating: {gameCardDataFromContainer.rating} </p>
                 <p classList="description"> {gameCardDataFromContainer.description}</p>
                 <button> Play Soundtrack ⏯️ </button>
 

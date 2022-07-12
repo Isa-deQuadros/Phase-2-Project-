@@ -36,3 +36,16 @@ code {
     margin-right: 0;
   }
   
+  .card p {
+    text-align: center;
+    width: 200px;
+    
+     
+     
+  }
+
+  .card {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+    }
