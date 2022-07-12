@@ -12,7 +12,7 @@ const Container = styled.div`
     @media (min-width: 768px) {
         .cards {
     display: flex;
-    flex-wrap: wrap; s
+    flex-wrap: wrap; 
     }
     .card {
     width: calc(33% - 2rem);
