@@ -17,18 +17,6 @@ const Container = styled.div`
         font-size: 20px;
         text-align: center;
     }
-<<<<<<< HEAD
-    // .Game{
-    //     display: inline-flex;
-    //     justify-content: space-between;
-    /* } */
-    
-    .DataDisplay{
-        margin-bottom: 20px;
-
-    }
-=======
->>>>>>> main
     .DataDisplay{
         margin-bottom: 20px;
     }
