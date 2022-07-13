@@ -20,6 +20,11 @@ const Container = styled.div`
     // .Game{
     //     display: inline-flex;
     //     justify-content: space-between;
+    /* } */
+    
+    .DataDisplay{
+        margin-bottom: 20px;
+
     }
     .Reviews{
         background-color: #62cda6;
@@ -89,14 +94,16 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
                 </div>
             </div>
             <div className="GameList">
+                <h4> Game List: </h4>
                 { gameCardDataFromApp.map((mappedArrayOfGames)=>{
-                    return(  
-                    <h4> 
-                        <GameCard 
-                        gameCardDataFromContainer={mappedArrayOfGames}
-                        renderGame={renderGame}
-                        key={mappedArrayOfGames.id} /> 
-                    </h4>
+                    return( 
+                        <>
+                            
+                            <GameCard 
+                            gameCardDataFromContainer={mappedArrayOfGames}
+                            renderGame={renderGame}
+                            key={mappedArrayOfGames.id} /> 
+                    </> 
                     )
                 })
                 }
