@@ -1,6 +1,6 @@
 /// USe Modal for forms 
 
-
+import React, {useState} from "react"
 import styled from "styled-components";
 
 
@@ -29,23 +29,38 @@ const Container = styled.div`
         }
     }
 
-
-
 `
 
 function GameCard({gameCardDataFromContainer, renderGame}){
-    console.log("gamecard data:", gameCardDataFromContainer)
+   const [musicState, setMusicState] = useState(true)
+   const [audio, setAudio] = useState(new Audio(gameCardDataFromContainer.score))
+
+  
+    const stop = () => {
+        audio.pause();
+    }
+
+    const start = () => {
+        audio.play(); 
+    }
+
+    function playAndPauseMusic(){
+        setMusicState(!musicState)
+        return musicState ? start() : stop()
+    }
+
+    
     return(
         <Container>
-            <div onClick={()=>renderGame(gameCardDataFromContainer.name, gameCardDataFromContainer.reviews)}
+            <div 
             className="card">
-                <img 
+                <img onClick={()=>renderGame(gameCardDataFromContainer.name, gameCardDataFromContainer.reviews)}
                 className="card_image"
                 src={gameCardDataFromContainer.imageURL}></img>
                 <h4> {gameCardDataFromContainer.name} </h4>
                 <p> Rating: {gameCardDataFromContainer.rating} </p>
                 <p classList="description"> {gameCardDataFromContainer.description}</p>
-                <button> Play Soundtrack ⏯️ </button>
+                <button onClick={playAndPauseMusic}> Play Soundtrack ⏯️ </button>
 
             </div>
         </Container>
