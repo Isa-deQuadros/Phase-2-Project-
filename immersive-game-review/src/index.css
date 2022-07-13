@@ -26,6 +26,11 @@ code {
     grid-template-columns: auto auto auto;
   }
 
+  .GameListTitle {
+    background-color: #62cda6 ;
+
+  }
+
   .description {
     display: block;
     margin-top: 1em;
