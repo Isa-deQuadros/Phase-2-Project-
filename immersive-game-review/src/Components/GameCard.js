@@ -60,7 +60,7 @@ function GameCard({gameCardDataFromContainer, renderGame}){
                 <h4> {gameCardDataFromContainer.name} </h4>
                 <p> Rating: {gameCardDataFromContainer.rating} </p>
                 <p classList="description"> {gameCardDataFromContainer.description}</p>
-                <button onClick={playAndPauseMusic}> Play Soundtrack ⏯️ </button>
+                <button onClick={playAndPauseMusic}>{} Play Soundtrack ⏯️ </button>
 
             </div>
         </Container>

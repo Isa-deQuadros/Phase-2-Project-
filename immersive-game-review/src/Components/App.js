@@ -27,18 +27,20 @@ useEffect(()=>{
 
 function addNewGame(newGame){
   setGameCardData([newGame, ...gameCardData])
-}
 
+  fetch("http://localhost:3002/gameCard",{
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(newGame)
+    })
+}
   
   return (
     <Container>
 
       < Header />
       <Profile />
-      <MainContainer 
-      gameCardDataFromApp={gameCardData} 
-      functionForForm={addNewGame}
-      />
+      <MainContainer gameCardDataFromApp={gameCardData} functionForForm={addNewGame} />
 
     </Container>
   )
