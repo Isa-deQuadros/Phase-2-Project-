@@ -35,3 +35,11 @@ code {
     margin-left: 0;
     margin-right: 0;
   }
+
+  .DataDisplay {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 27px ;
+    flex-wrap: wrap;
+  }

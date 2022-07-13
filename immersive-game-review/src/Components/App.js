@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+
 import styled from 'styled-components'
 
 
@@ -14,11 +15,13 @@ const Container = styled.div`
 `
 
 
+
+
 function App(){
 const [gameCardData, setGameCardData] = useState([])
 
 useEffect(()=>{
-  fetch("http://localhost:3002/gameCard")
+  fetch("http://localhost:3000/gameCard")
   .then(res=> res.json())
   .then((fetchedData)=>{
   setGameCardData([...fetchedData])
@@ -33,7 +36,6 @@ useEffect(()=>{
       < Header />
       <Profile />
       <MainContainer gameCardDataFromApp={gameCardData} />
-
     </Container>
   )
 }
@@ -45,4 +47,4 @@ export default App
   //NavBar
 //Profile
 //MainContainer
-  //NewGameForm  //GameCard
+  //NewGameForm  //GameCard //Re
