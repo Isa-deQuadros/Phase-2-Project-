@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import React, {useState} from "react"
 import GameCard from "./GameCard";
+
+import ResponsivePlayer from "./ResponsivePlayer";
+
 import NewGameForm from "./NewGameForm";
 
 
@@ -14,18 +17,20 @@ const Container = styled.div`
     h4{
         font-size: 20px;
     }
-    .DataDisplay{
-        display: inline-flex;
-        justify-content: space-between;
+    // .Game{
+    //     display: inline-flex;
+    //     justify-content: space-between;
     }
     .Reviews{
         background-color: #62cda6;
         max-width: 35%;
+        align-self:center;
     }
 
-    .MusicTrailer{
-        background-color: #4fc666;
-        max-width: 55%;
+    .GameTrailer{
+        // background-color: #4fc666;
+        // max-width: 50%;
+    
     }
     .GameList{
         background-color: #62cda6;
@@ -39,8 +44,6 @@ const NewGameFormButton = styled.button`
     font-size: 23.5px;
     color:white;
     margin: 10px 0 20px 0;
-
-
 `
 
 function GamesContainer({gameCardDataFromApp, functionForForm}){
@@ -66,19 +69,16 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
             {formDisplay ? <NewGameForm functionForForm={functionForForm}/> : null }
             <br/>
             <div className="DataDisplay">
-                < div className="MusicTrailer">
-                <h4> Trailer </h4>
-                <div div className="AltImgB4Video">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv9sSoOkqBqFnlWl566nN0PTMMwkShd7ZUAg&usqp=CAU"
-                        width={200}
-                        height={200}
-                        quality={100}/>
+                < div className="GameTrailer" >
+                <ResponsivePlayer/>
+                {/* <div div className="AltImgB4Video">
                     <img src="https://static.vecteezy.com/system/resources/thumbnails/007/836/374/small/cartoon-loading-bar-for-game-interface-filled-bar-to-download-or-show-resources-design-element-cartoon-illustration-web-ui-design-vector.jpg" 
-                        width={200}
+                        width={300}
                         height={50}
-                        quality={100}/>
+                        // quality={100}
+                        />
 
-                </div> 
+                </div>  */}
                 </div>
                 < div className="Reviews">
                     <h4> Reviews: </h4>
@@ -101,8 +101,6 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
                 })
                 }
                 </div>
-
-
         </Container>
     )
 }
