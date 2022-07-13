@@ -22,7 +22,8 @@ function Header(){
     return(
         <Container>
             <h1>Immersive Game Review APP</h1>
-            <h2> Nav </h2>
+            <nav>
+            </nav>
         </Container>    
     )
 }

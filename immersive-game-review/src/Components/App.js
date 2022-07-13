@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 
+
 import styled from 'styled-components'
 
 
@@ -21,30 +22,38 @@ function App(){
 const [gameCardData, setGameCardData] = useState([])
 
 useEffect(()=>{
-  fetch("http://localhost:3000/gameCard")
+  fetch("http://localhost:3002/gameCard")
   .then(res=> res.json())
   .then((fetchedData)=>{
+  console.log([fetchedData])
   setGameCardData([...fetchedData])
   })
   },[])
 
 function addNewGame(newGame){
-  setGameCardData([newGame, ...gameCardData])
-}
+  console([newGame, ...gameCardData])
 
+  fetch("http://localhost:3002/gameCard",{
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(newGame)
+    })
+}
   
   return (
     <Container>
 
-      < Header />
-      <Profile />
+          
+          < Header />
+          <Profile />
 
-      <MainContainer 
-      gameCardDataFromApp={gameCardData} 
-      functionForForm={addNewGame}
-      />
-
+          < MainContainer 
+                gameCardDataFromApp={gameCardData} 
+                functionForForm={addNewGame} />
+        
     </Container>
+     
+    
   )
 }
 export default App
@@ -55,4 +64,4 @@ export default App
   //NavBar
 //Profile
 //MainContainer
-  //NewGameForm  //GameCard //Re
+  //NewGameForm  //GameCard //ResponsivePlayer

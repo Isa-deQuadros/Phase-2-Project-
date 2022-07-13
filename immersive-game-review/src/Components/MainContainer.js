@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import React, {useState} from "react"
+
 import GameCard from "./GameCard";
-
 import ResponsivePlayer from "./ResponsivePlayer";
-
 import NewGameForm from "./NewGameForm";
 
 
@@ -16,6 +15,7 @@ const Container = styled.div`
     }
     h4{
         font-size: 20px;
+        text-align: center;
     }
     // .Game{
     //     display: inline-flex;
@@ -25,6 +25,9 @@ const Container = styled.div`
     .DataDisplay{
         margin-bottom: 20px;
 
+    }
+    .DataDisplay{
+        margin-bottom: 20px;
     }
     .Reviews{
         background-color: #62cda6;
@@ -56,10 +59,19 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
     const [title, setTitle] = useState("Title of Game")
     const [reviews, setReviews] = useState("")
     const [formDisplay, setFormDisplay] = useState(false)
+    const [url, setUrlState] = useState("")
 
-    function renderGame(gameName, gameReview){ 
+
+  function urlState(){
+    return url
+  }
+
+
+    function renderGame(gameName, gameReview, gameVideo){ 
         setTitle(gameName)
         setReviews(gameReview)
+        setUrlState(gameVideo)
+
     }
 
     function displayForm(){
@@ -68,6 +80,7 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
     
 
     return(
+        
         <Container>
             <h2> {title} </h2>
             <NewGameFormButton onClick={displayForm}> Click To Add New Game</NewGameFormButton> 
@@ -75,39 +88,57 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
             <br/>
             <div className="DataDisplay">
                 < div className="GameTrailer" >
-                <ResponsivePlayer/>
-                {/* <div div className="AltImgB4Video">
+
+                <ResponsivePlayer urlState={urlState} dataForGameTrailer={gameCardDataFromApp}/>
+                <div className="AltImgB4Video">
                     <img src="https://static.vecteezy.com/system/resources/thumbnails/007/836/374/small/cartoon-loading-bar-for-game-interface-filled-bar-to-download-or-show-resources-design-element-cartoon-illustration-web-ui-design-vector.jpg" 
                         width={300}
                         height={50}
                         // quality={100}
                         />
 
-                </div>  */}
+                </div> 
                 </div>
-                < div className="Reviews">
-                    <h4> Reviews: </h4>
-                    <p>{reviews.first}</p>
-                    <p>{reviews.second}</p>
-                    <p>{reviews.third}</p>
-                    {/* some math function that turns the percentage into x number of controllers */}
-                </div>
+                
+                    < div className="Reviews">
+                        <h4> Reviews: </h4>
+                        <p>{reviews.first}</p>
+                        <p>{reviews.second}</p>
+                        <p>{reviews.third}</p>
+                        {/* some math function that turns the percentage into x number of controllers */}
+                    </div>
+
             </div>
+<<<<<<< HEAD
             <div className="GameList">
                 <h4> Game List: </h4>
                 { gameCardDataFromApp.map((mappedArrayOfGames)=>{
                     return( 
                         <>
                             
+=======
+           
+                <div className="GameList">
+                    <h4> Game List: </h4>
+                    { gameCardDataFromApp.map((mappedArrayOfGames)=>{
+                        return(   
+>>>>>>> main
                             <GameCard 
                             gameCardDataFromContainer={mappedArrayOfGames}
                             renderGame={renderGame}
                             key={mappedArrayOfGames.id} /> 
+<<<<<<< HEAD
                     </> 
                     )
                 })
+=======
+                        )
+            
+                    })
+>>>>>>> main
                 }
                 </div>
+            
         </Container>
     )
 }

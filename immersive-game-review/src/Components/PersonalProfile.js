@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useState } from "react";
 
 
 const Container = styled.div`
@@ -10,10 +11,6 @@ const Container = styled.div`
         margin: 10px 50px 10px 0;
     }
 `
-
-
-
-
 
 function Profile(){
 
