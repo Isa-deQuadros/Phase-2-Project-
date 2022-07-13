@@ -22,11 +22,11 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
     <Routes>
-       <Route exact path="/" element={<App />} />
-       <Route path="/header" element={<Header />} />
-       <Route path="/games" element={<MainContainer />} />
-       <Route path="games/Form" element={<NewGameForm />} />
-       <Route path="/profile" element={<PersonalProfile />} />
+        <Route exact path="/" element={<App />} />
+        <Route path="/header" element={<Header />} />
+        <Route path="/games" element={<MainContainer />} />
+        <Route path="games/Form" element={<NewGameForm />} />
+        <Route path="/profile" element={<PersonalProfile />} />
        {/* <Route path="/gamelist" element={<GameCard />} /> */}
     </Routes>
     </BrowserRouter>
