@@ -109,34 +109,17 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
                     </div>
 
             </div>
-<<<<<<< HEAD
-            <div className="GameList">
-                <h4> Game List: </h4>
-                { gameCardDataFromApp.map((mappedArrayOfGames)=>{
-                    return( 
-                        <>
-                            
-=======
-           
                 <div className="GameList">
                     <h4> Game List: </h4>
                     { gameCardDataFromApp.map((mappedArrayOfGames)=>{
                         return(   
->>>>>>> main
                             <GameCard 
                             gameCardDataFromContainer={mappedArrayOfGames}
                             renderGame={renderGame}
                             key={mappedArrayOfGames.id} /> 
-<<<<<<< HEAD
-                    </> 
-                    )
-                })
-=======
                         )
-            
-                    })
->>>>>>> main
-                }
+                        })
+                    }
                 </div>
             
         </Container>
