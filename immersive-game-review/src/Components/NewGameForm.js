@@ -2,7 +2,7 @@
 /// https://react-bootstrap.github.io/components/modal/
 
 
-import React from 'react'
+import React,{useState} from 'react'
 import styled from 'styled-components'
 
 
@@ -10,16 +10,41 @@ const Container = styled.div`
 
 `
 
-function NewGameForm(){
+function NewGameForm({functionForForm}){
+    const [titleState, setTitleState] = useState("")
+    const [releaseYearState, setReleaseYearState] = useState("")
+    const [genreState, setGenreState] = useState("")
+    const [descriptionState, setDescriptionState] = useState("")
+    const [reviewState, setReviewState] = useState("")
+    const [ratingState, setRatingState] = useState("")
+    const [coverState, setCoverState] = useState("")
+    const [soundtrackState, setSoundtrackState] = useState("")
+
     return (
         <Container>
-            <form>
-                <input type="text" placeholder='Game Title Here...' />
-                <input type="text" placeholder='Release Year' />
-                <input type="text" placeholder='Game Genre' />
-                <input type="text" placeholder='Game Description/Synopsis'/>
-                <input type="text" placeholder='Your Review Here...' />
-                <select>
+            <form onSubmit={((event) => {
+                 event.preventDefault()
+
+                 let newGame = {
+                    name: titleState,
+                    releaseYear: releaseYearState,
+                    genre: genreState,
+                    description: descriptionState,
+                    reviews: reviewState,
+                    rating: ratingState,
+                    imageURL: coverState,
+                    score: soundtrackState
+                }
+                functionForForm(newGame)
+            }
+                
+            )}>
+                <input type="text" placeholder='Game Title Here...' value={titleState} onChange={(event)=>setTitleState(event.target.value)}/>
+                <input type="text" placeholder='Release Year' value={releaseYearState} onChange={(event)=>setReleaseYearState(event.target.value)}/>
+                <input type="text" placeholder='Game Genre' value={genreState} onChange={(event)=>setGenreState(event.target.value)}/>
+                <input type="text" placeholder='Game Description/Synopsis' value={descriptionState} onChange={(event)=>setDescriptionState(event.target.value)}/>
+                <input type="text" placeholder='Your Review Here...' value={reviewState} onChange={(event)=>setReviewState(event.target.value)}/>
+                <select value={ratingState} onChange={(event)=>setRatingState(event.target.value)}>
                     < option value="0"> 🎮  out of 10 🎮 </option>
                     < option value='1'> 1 </option>
                     < option value='2'> 2 </option>
@@ -32,10 +57,11 @@ function NewGameForm(){
                     < option value='9'> 9</option>
                     < option value='10'> 10 </option>
                 </select>
-                <input type="image" placeholder='Gameplay Cover' alt="the name of the game"/>
-                <input type="url" placeholder='Game Soundtrack' />
+                <input type="url" placeholder='Game Cover Url' alt="the name of the game" value={coverState} onChange={(event)=>setCoverState(event.target.value)}/>
+                <input type="url" placeholder='Game Soundtrack Url' value={soundtrackState} onChange={(event)=>setSoundtrackState(event.target.value)}/>
+                <button type="submit" >Add Game</button>
             </form>
         </Container>
     )
 }
-export default NewGameFrom 
+export default NewGameForm;

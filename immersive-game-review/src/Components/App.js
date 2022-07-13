@@ -28,6 +28,9 @@ useEffect(()=>{
   })
   },[])
 
+function addNewGame(newGame){
+  setGameCardData([newGame, ...gameCardData])
+}
 
   
   return (
@@ -35,7 +38,12 @@ useEffect(()=>{
 
       < Header />
       <Profile />
-      <MainContainer gameCardDataFromApp={gameCardData} />
+
+      <MainContainer 
+      gameCardDataFromApp={gameCardData} 
+      functionForForm={addNewGame}
+      />
+
     </Container>
   )
 }

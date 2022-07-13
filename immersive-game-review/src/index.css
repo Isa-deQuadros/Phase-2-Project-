@@ -13,13 +13,11 @@ code {
 }
 
 .card_image {
-  width: 120px;
+  width: 200px;
     height: 120px;
-    height: auto;
-    float: left;
     margin: 3px;
     padding: 3px;
-  height: auto;
+   
 
 }
 
@@ -34,6 +32,7 @@ code {
     margin-bottom: 1em;
     margin-left: 0;
     margin-right: 0;
+
   }
 
   .DataDisplay {
@@ -43,3 +42,18 @@ code {
     margin-bottom: 27px ;
     flex-wrap: wrap;
   }
+  
+  
+  .card p {
+    text-align: center;
+    /* width: 200px; */
+    
+     
+  }
+
+  .card {
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    }
