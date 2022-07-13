@@ -17,10 +17,6 @@ const Container = styled.div`
         font-size: 20px;
         text-align: center;
     }
-    // .Game{
-    //     display: inline-flex;
-    //     justify-content: space-between;
-    }
     .DataDisplay{
         margin-bottom: 20px;
     }
@@ -57,15 +53,13 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
     const [url, setUrlState] = useState("")
 
 
-  function urlState(){
-    return url
-  }
 
 
     function renderGame(gameName, gameReview, gameVideo){ 
         setTitle(gameName)
         setReviews(gameReview)
-        setUrlState(gameVideo)
+       setUrlState(gameVideo)
+        
 
     }
 
@@ -84,14 +78,9 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
             <div className="DataDisplay">
                 < div className="GameTrailer" >
 
-                <ResponsivePlayer urlState={urlState} dataForGameTrailer={gameCardDataFromApp}/>
+                <ResponsivePlayer urlState={url} dataForGameTrailer={gameCardDataFromApp}/>
                 <div className="AltImgB4Video">
-                    <img src="https://static.vecteezy.com/system/resources/thumbnails/007/836/374/small/cartoon-loading-bar-for-game-interface-filled-bar-to-download-or-show-resources-design-element-cartoon-illustration-web-ui-design-vector.jpg" 
-                        width={300}
-                        height={50}
-                        // quality={100}
-                        />
-
+        
                 </div> 
                 </div>
                 
@@ -104,9 +93,9 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
                     </div>
 
             </div>
-           
+                <div className="GameListTitle">
+                    <h4> Game List: </h4>         
                 <div className="GameList">
-                    <h4> Game List: </h4>
                     { gameCardDataFromApp.map((mappedArrayOfGames)=>{
                         return(   
                             <GameCard 
@@ -118,7 +107,7 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
                     })
                 }
                 </div>
-            
+                </div>
         </Container>
     )
 }
