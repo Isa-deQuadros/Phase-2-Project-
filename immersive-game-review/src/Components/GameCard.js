@@ -54,13 +54,14 @@ function GameCard({gameCardDataFromContainer, renderGame}){
         <Container>
             <div 
             className="card">
-                <img onClick={()=>renderGame(gameCardDataFromContainer.name, gameCardDataFromContainer.reviews)}
+                <img onClick={()=>renderGame(gameCardDataFromContainer.name, gameCardDataFromContainer.reviews, gameCardDataFromContainer.trailer)}
                 className="card_image"
                 src={gameCardDataFromContainer.imageURL}></img>
                 <h4> {gameCardDataFromContainer.name} </h4>
                 <p> Rating: {gameCardDataFromContainer.rating} </p>
                 <p classList="description"> {gameCardDataFromContainer.description}</p>
-                <button onClick={playAndPauseMusic}>{} Play Soundtrack ⏯️ </button>
+                <button onClick={playAndPauseMusic}> Play Soundtrack ⏯️  </button>
+                
 
             </div>
         </Container>

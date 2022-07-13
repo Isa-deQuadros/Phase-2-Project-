@@ -101,17 +101,7 @@
         "second": "My absolute favourite game series, it doesn't rely on jumpscares to frighten people, just the atmosphere and tense moments are enough. I've made my whole family play it.",
         "third": "Little Nightmares II -and its predecessor- are prime examples of less is more in horror games. Simply fantastic gems."
       }
-    },
-    {
-      "name": "Halo 3",
-      "releaseYear": "2007",
-      "genre": "Shooter, Action",
-      "description": "Halo 3 is a 2007 first-person shooter video game developed by Bungie for the Xbox 360 console. The third installment in the Halo franchise, the game concludes the story arc begun in 2001's Halo: Combat Evolved and continued in 2004's Halo 2. ",
-      "reviews": "This is the last true Halo game, and in my opinion it's objectively the best in the series so far. The campaign missions played well and had the best set pieces seen in a Halo game to date, not to mention it also has arguably the most diverse campaign mission in it too (The Covenant) where you basically get to use and fight against nearly every asset in the game, the scale was and still is tremendous for a halo game and still hasn't been matched.",
-      "rating": "9",
-      "imageURL": "https://wallpaperaccess.com/full/1470705.jpg",
-      "score": "https://vgmsite.com/soundtracks/halo-original-soundtrack-2002/scllbyqhjs/26%20Halo.mp3",
-      "id": 7
     }
+    
   ]
 }
