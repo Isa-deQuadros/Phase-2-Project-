@@ -2,6 +2,7 @@
 
 import React, {useState} from "react"
 import styled from "styled-components";
+import NewReviewForm from "./NewReviewForm";
 
 
 const Container = styled.div`
@@ -31,13 +32,14 @@ const Container = styled.div`
     }
 `
 
-function GameCard({gameCardDataFromContainer, renderGame, descriptionToggle, descriptionState}){
+function GameCard({gameCardDataFromContainer, renderGame, descriptionToggle, descriptionState, newReviewFormFunction}){
    const [musicState, setMusicState] = useState(true)
    const [audio, setAudio] = useState(new Audio(gameCardDataFromContainer.score))
+   const [reviewForm, setReviewForm] = useState(false)
 
   
     const stop = () => {
-        audio.pause();
+        audio.pause(); 
     }
 
     const start = () => {
@@ -50,6 +52,11 @@ function GameCard({gameCardDataFromContainer, renderGame, descriptionToggle, des
     }
 
     
+    function displayReviewForm(){
+        setReviewForm(!reviewForm)
+    }
+
+
     return(
         <Container>
             <div 
@@ -61,6 +68,10 @@ function GameCard({gameCardDataFromContainer, renderGame, descriptionToggle, des
                 <p> Rating: {gameCardDataFromContainer.rating} </p>
                 <p classList="description"> {descriptionToggle  && gameCardDataFromContainer.description === descriptionState ? gameCardDataFromContainer.description : null }</p>
                 <button onClick={playAndPauseMusic}>  ▶️  ⏸ </button>
+                <button onClick={displayReviewForm}> 🎮Add Review🎮</button>
+                <div className="review-form">
+                    { reviewForm ? <NewReviewForm newReviewFormFunction={newReviewFormFunction}/> : null}
+                </div>
                 
 
             </div>

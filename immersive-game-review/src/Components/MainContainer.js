@@ -70,6 +70,7 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
     const [url, setUrlState] = useState("")
     const [descriptionToggle, setDescriptionToggle] = useState(false)
     const [descriptionState, setDescriptionState] = useState("")
+    const [newReviewState, setNewReviewState] = useState("")
 
 
 
@@ -79,6 +80,7 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
         setUrlState(gameVideo)
         setDescriptionState(gameDescription)
         setDescriptionToggle(!descriptionToggle)
+        setNewReviewState("")
         
 
     }
@@ -87,6 +89,9 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
         setFormDisplay(!formDisplay)
     }
     
+    function newReviewFormFunction(newReview){
+        setNewReviewState(newReview)
+    }
 
     return(
         
@@ -111,6 +116,7 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
                         <p> 1. {reviews.first}</p>
                         <p> 2. {reviews.second}</p>
                         <p> 3. {reviews.third}</p>
+                        <p> 4. {newReviewState.reviews}</p>
                         {/* some math function that turns the percentage into x number of controllers */}
                     </div>
 
@@ -122,6 +128,7 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
                     { gameCardDataFromApp.map((mappedArrayOfGames)=>{
                         return(   
                             <GameCard 
+                            newReviewFormFunction={newReviewFormFunction}
                             descriptionState={descriptionState}
                             descriptionToggle={descriptionToggle}
                             gameCardDataFromContainer={mappedArrayOfGames}
