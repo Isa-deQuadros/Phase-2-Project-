@@ -61,14 +61,17 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
     const [reviews, setReviews] = useState("")
     const [formDisplay, setFormDisplay] = useState(false)
     const [url, setUrlState] = useState("")
+    const [descriptionToggle, setDescriptionToggle] = useState(false)
+    const [descriptionState, setDescriptionState] = useState("")
 
 
 
-
-    function renderGame(gameName, gameReview, gameVideo){ 
+    function renderGame(gameName, gameReview, gameVideo, gameDescription){ 
         setTitle(gameName)
         setReviews(gameReview)
         setUrlState(gameVideo)
+        setDescriptionState(gameDescription)
+        setDescriptionToggle(!descriptionToggle)
         
 
     }
@@ -90,7 +93,7 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
             <div className="DataDisplay">
                 < div className="GameTrailer" >
 
-                <ResponsivePlayer urlState={url} dataForGameTrailer={gameCardDataFromApp}/>
+                <ResponsivePlayer urlState={url}/>
                 <div className="AltImgB4Video">
         
                 </div> 
@@ -112,6 +115,8 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
                     { gameCardDataFromApp.map((mappedArrayOfGames)=>{
                         return(   
                             <GameCard 
+                            descriptionState={descriptionState}
+                            descriptionToggle={descriptionToggle}
                             gameCardDataFromContainer={mappedArrayOfGames}
                             renderGame={renderGame}
                             key={mappedArrayOfGames.id} /> 

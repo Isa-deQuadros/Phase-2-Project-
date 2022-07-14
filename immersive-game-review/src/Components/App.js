@@ -25,7 +25,6 @@ useEffect(()=>{
   fetch("http://localhost:3002/gameCard")
   .then(res=> res.json())
   .then((fetchedData)=>{
-  console.log([fetchedData])
   setGameCardData([...fetchedData])
   })
   },[])
@@ -42,8 +41,6 @@ function addNewGame(newGame){
   
   return (
     <Container>
-
-          
           < Header />
           <Profile />
 

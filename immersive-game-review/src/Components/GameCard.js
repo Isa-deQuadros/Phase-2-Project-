@@ -30,7 +30,7 @@ const Container = styled.div`
     }
 `
 
-function GameCard({gameCardDataFromContainer, renderGame}){
+function GameCard({gameCardDataFromContainer, renderGame, descriptionToggle, descriptionState}){
    const [musicState, setMusicState] = useState(true)
    const [audio, setAudio] = useState(new Audio(gameCardDataFromContainer.score))
 
@@ -53,12 +53,12 @@ function GameCard({gameCardDataFromContainer, renderGame}){
         <Container>
             <div 
             className="card">
-                <img onClick={()=>renderGame(gameCardDataFromContainer.name, gameCardDataFromContainer.reviews, gameCardDataFromContainer.trailer)}
+                <img onClick={()=>renderGame(gameCardDataFromContainer.name, gameCardDataFromContainer.reviews, gameCardDataFromContainer.trailer, gameCardDataFromContainer.description)}
                 className="card_image"
                 src={gameCardDataFromContainer.imageURL}></img>
                 <h3> {gameCardDataFromContainer.name} </h3>
                 <p> Rating: {gameCardDataFromContainer.rating} </p>
-                <p classList="description"> {gameCardDataFromContainer.description}</p>
+                <p classList="description"> {descriptionToggle  && gameCardDataFromContainer.description === descriptionState ? gameCardDataFromContainer.description : null }</p>
                 <button onClick={playAndPauseMusic}>  ▶️  ⏸ </button>
                 
 
