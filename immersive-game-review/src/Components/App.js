@@ -52,7 +52,6 @@ function addNewGame(newGame){
                 functionForForm={addNewGame} />
         
     </Container>
-     
     
   )
 }
