@@ -1,4 +1,4 @@
-/// USe Modal for forms 
+
 
 import React, {useState} from "react"
 import styled from "styled-components";
@@ -67,9 +67,10 @@ function GameCard({gameCardDataFromContainer, renderGame, updateLikes}){
             headers:{"content-type":"application/json"},
             body: JSON.stringify({likes: upvotes+ 1 })
         }
-        fetch ('https://localhost:3002/gameCard/${id', config)
-        .then(res=> res.json())
-        .then(data => updateLikes(data))
+        // use effect maybe, error on ID, uncaught on promise
+        // fetch (`https://localhost:3002/gameCard${id}`, config)
+        // .then(res=> res.json())
+        // .then(data => updateLikes(data))
     }
 
     return(

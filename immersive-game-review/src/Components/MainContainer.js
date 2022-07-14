@@ -9,7 +9,7 @@ import NewGameForm from "./NewGameForm";
 const Container = styled.div`
 
     border-top: 20px solid #1bbb18;
-    margin-top: 65px;
+    /* margin-top: 65px; */
 
 
     h2{

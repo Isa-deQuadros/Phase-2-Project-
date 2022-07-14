@@ -6,7 +6,6 @@ import { useState } from "react";
 const Container = styled.div`
     background-color:#281474 ;
     width: 25%;
-    float: right;
 
 `
 
@@ -58,8 +57,13 @@ function Profile(){
                 <div className="modal-header">
                     <h4 className="modal-title"> Hello Iris, Keegan, and Isa </h4>
                         <div className="modal-body">
-                            <h6>Favorite Game: </h6>
-                            <h6> Favorite Score: </h6>
+                            <h6>Favorite Game: Super Mario Sunshine</h6>
+                            <h6> Bio: </h6>
+                            <p> Iris, Keegan, and Isa are Software engineers who love to game.
+                                Here are their favorite games, and their idea for an immersive 
+                                game review experience. Enjoy the music, and add your favorites
+                                to the mix. 
+                            </p>
                         </div>
                 </div>
                 </Content>

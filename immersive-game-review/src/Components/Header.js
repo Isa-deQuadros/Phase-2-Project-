@@ -6,7 +6,10 @@ import Menu from "./NavBar"
 
 const Container = styled.div`
     background-color:#3a1198;
-    padding: 5px 0 5px 0;
+    padding: 5px 10px 5px 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
 
 `
 
@@ -30,7 +33,7 @@ function Header(){
                 onClick={ToggleNavBar}/>
                 {openNav ? <Menu/> : null }
             </div>
-            <h1>Immersive Game Review APP</h1>
+            <h1>Immersive Game < br/> Review APP</h1>
         </Container>    
     )
 }
