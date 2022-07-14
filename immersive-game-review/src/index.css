@@ -24,11 +24,12 @@ code {
 .GameList {
     display: grid;
     grid-template-columns: auto auto auto;
+    /* DONE */
   }
 
   .GameListTitle {
-    background-color: #62cda6 ;
-
+    background-color: #184950 ;
+    /* DONE */
   }
 
   .description {
