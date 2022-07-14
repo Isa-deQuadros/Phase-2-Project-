@@ -23,14 +23,15 @@ const Container = styled.div`
 function App() {
   const [gameCardData, setGameCardData] = useState([])
 
-  useEffect(() => {
-    fetch("http://localhost:3002/gameCard")
-      .then(res => res.json())
-      .then((fetchedData) => {
-        console.log([fetchedData])
-        setGameCardData([...fetchedData])
-      })
-  }, [])
+
+useEffect(()=>{
+  fetch("http://localhost:3002/gameCard")
+  .then(res=> res.json())
+  .then((fetchedData)=>{
+  setGameCardData([...fetchedData])
+  })
+  },[])
+
 
   function addNewGame(newGame) {
     console([newGame, ...gameCardData])
@@ -44,7 +45,7 @@ function App() {
 
   return (
     <Container>
-      
+
       < Header/>
       <Routes>
 
@@ -57,6 +58,7 @@ function App() {
       {/* < MainContainer
         gameCardDataFromApp={gameCardData}
         functionForForm={addNewGame} /> */}
+
 
     </Container>
 

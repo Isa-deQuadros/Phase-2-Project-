@@ -9,12 +9,13 @@ const Container = styled.div`
     background-color:#27365a ;
     // DONE
     margin: 1rem;
+    .card{
     @media (min-width: 768px) {
         .cards {
     display: flex;
     flex-wrap: wrap; 
     }
-    }
+    }}
     p{
         align-self:center;
         margin-right: 20px
@@ -27,16 +28,16 @@ const Container = styled.div`
     }
 `
 
-function GameCard({gameCardDataFromContainer, renderGame }){
-   const [musicState, setMusicState] = useState(true)
-   const [audio, setAudio] = useState(new Audio(gameCardDataFromContainer.score))
+function GameCard({gameCardDataFromContainer, renderGame, descriptionToggle, descriptionState}){
+    const [musicState, setMusicState] = useState(true)
+    const [audio, setAudio] = useState(new Audio(gameCardDataFromContainer.score))
 
 //    const [ upvotes, setUpVotes]= useState()
-   const [ upvotes, setUpVotes]= useState(gameCardDataFromContainer.likes)
+    const [ upvotes, setUpVotes]= useState(gameCardDataFromContainer.likes)
 
-   const [ downvotes, setDownVotes]= useState (0)
+    const [ downvotes, setDownVotes]= useState (0)
 
-  
+
     const stop = () => {
         audio.pause();
     }
@@ -73,7 +74,7 @@ function GameCard({gameCardDataFromContainer, renderGame }){
         <Container>
             <div 
             className="card">
-                <img onClick={()=>renderGame(gameCardDataFromContainer.name, gameCardDataFromContainer.reviews, gameCardDataFromContainer.trailer)}
+                <img onClick={()=>renderGame(gameCardDataFromContainer.name, gameCardDataFromContainer.reviews, gameCardDataFromContainer.trailer, gameCardDataFromContainer.description)}
                 className="card_image"
                 src={gameCardDataFromContainer.imageURL}  alt="game_image"/>
                 <h3> {gameCardDataFromContainer.name} </h3>
@@ -81,6 +82,7 @@ function GameCard({gameCardDataFromContainer, renderGame }){
                 <button onClick={increaseLikes}> {upvotes} 🔥  </button>
                 <button onClick={()=> setDownVotes( downvotes +1 )}> {downvotes}👎 </button>
                 <p classList="description"> {gameCardDataFromContainer.description}</p>
+                <p classList="description"> {descriptionToggle  && gameCardDataFromContainer.description === descriptionState ? gameCardDataFromContainer.description : null }</p>
                 <button onClick={playAndPauseMusic}>  ▶️  ⏸ </button>
                 
 
