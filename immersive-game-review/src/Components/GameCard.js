@@ -14,14 +14,11 @@ const Container = styled.div`
     display: flex;
     flex-wrap: wrap; 
     }
-   
     }
-
     p{
         align-self:center;
         margin-right: 20px
     }
-
     button{
         background-color:#6d936c; 
         // DONE ✅
@@ -30,11 +27,13 @@ const Container = styled.div`
     }
 `
 
-function GameCard({gameCardDataFromContainer, renderGame, updateLikes}){
+function GameCard({gameCardDataFromContainer, renderGame }){
    const [musicState, setMusicState] = useState(true)
    const [audio, setAudio] = useState(new Audio(gameCardDataFromContainer.score))
 
-   const [ upvotes, setUpVotes]= useState(0)
+//    const [ upvotes, setUpVotes]= useState()
+   const [ upvotes, setUpVotes]= useState(gameCardDataFromContainer.likes)
+
    const [ downvotes, setDownVotes]= useState (0)
 
   
@@ -50,28 +49,24 @@ function GameCard({gameCardDataFromContainer, renderGame, updateLikes}){
     }
 
     function updateLikes(updatedLike){
-        setUpVotes((gameCardDataFromApp)=>{
-            return gameCardDataFromApp.map((like)=>{
-                if (gameCardDataFromApp.id = like.id){
-                    return updatedLike
-                }else {
-                    return like
-                }
-            })
-        })
+        const updateLike= gameCardDataFromContainer.map((like)=>
+        like.id === updatedLike.id? updatedLike : like);
+        setUpVotes(updateLike)
+
     }
     
-    function increaseLikes(e){
-        e.preventDefault()
+    function increaseLikes(){
+
         const config ={
             method:"PATCH",
-            headers:{"content-type":"application/json"},
-            body: JSON.stringify({likes: upvotes+ 1 })
+            headers:{"Content-Type":"application/json"},
+            body: JSON.stringify({likes: gameCardDataFromContainer.likes +1 })
+
         }
-        // use effect maybe, error on ID, uncaught on promise
-        // fetch (`https://localhost:3002/gameCard${id}`, config)
-        // .then(res=> res.json())
-        // .then(data => updateLikes(data))
+        fetch(`http://localhost:3002/gameCard/${gameCardDataFromContainer.id}`, config)
+        .then(res=> res.json())
+        .then(data => updateLikes(data))
+
     }
 
     return(
@@ -83,7 +78,7 @@ function GameCard({gameCardDataFromContainer, renderGame, updateLikes}){
                 src={gameCardDataFromContainer.imageURL}  alt="game_image"/>
                 <h3> {gameCardDataFromContainer.name} </h3>
                 <p> Rating: {gameCardDataFromContainer.rating} </p>
-                <button onClick={increaseLikes}> {gameCardDataFromContainer.likes}🔥  </button>
+                <button onClick={increaseLikes}> {upvotes} 🔥  </button>
                 <button onClick={()=> setDownVotes( downvotes +1 )}> {downvotes}👎 </button>
                 <p classList="description"> {gameCardDataFromContainer.description}</p>
                 <button onClick={playAndPauseMusic}>  ▶️  ⏸ </button>

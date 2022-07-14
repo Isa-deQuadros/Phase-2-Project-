@@ -13,10 +13,12 @@ const Container = styled.div`
 `
 
 const Modal = styled.div`
-    // position: fixed;
+    position: fixed;
     background-color: #008080;
+    right: 20px;
+    
     // DONE
-    opacity: 85%;
+    opacity: 95%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -24,6 +26,8 @@ const Modal = styled.div`
 const Content= styled.div`
         // background-color: white
         // color: black;
+        width: 400px;
+        margin-right: 10px;
 
     
     // .modal-header{
@@ -33,7 +37,6 @@ const Content= styled.div`
     .modal-body{
         padding: 10px;
         border-top: 1px solid #eee;
-        border-bottom: 1px solid #eee;
     }
 `
 
@@ -48,10 +51,10 @@ function Profile(){
 
 
     return(
-        <Container id="profile">
+        <Container id="profile"  onClick={setProfileToggle} >
 
             <img className="avatar-box" 
-            onClick={setProfileToggle}  
+            
             alt="avatar" 
             src ="https://cdn.discordapp.com/attachments/976609407276298250/997013793211166781/MUSIC_APP.png"
                 height={60} 
@@ -62,11 +65,10 @@ function Profile(){
             (<Modal>
                 <Content>
                 <div className="modal-header">
-                    <h4 className="modal-title"> Hello Iris, Keegan, and Isa </h4>
+                    <h4 className="modal-title"> ✨ Hello Cohort B ✨ </h4>
                         <div className="modal-body">
-                            <h6>Favorite Game: Super Mario Sunshine</h6>
-                            <h6> Bio: </h6>
-                            <p> Iris, Keegan, and Isa are Software engineers who love to game.
+                            <h3>Favorite Game: Super Mario Sunshine</h3>
+                            <p> Bio: Iris, Keegan, and Isa are Software engineers who love to game.
                                 Here are their favorite games, and their idea for an immersive 
                                 game review experience. Enjoy the music, and add your favorites
                                 to the mix. 

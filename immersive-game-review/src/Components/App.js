@@ -46,15 +46,12 @@ function App() {
     <Container>
       
       < Header/>
-     
       <Routes>
 
         <Route path="/" element={<Home />} ></Route>
         <Route path="/games" element={<MainContainer  gameCardDataFromApp={gameCardData}
         functionForForm={addNewGame}/>} ></Route>
         <Route path="/newgames" element={<NewGameForm />} ></Route>
-        {/* <Route path="/profile" element={<PersonalProfile />} ></Route> */}
-        <Route path="/gamelist" element={<GameCard />} ></Route>
       </Routes>
 
       {/* < MainContainer
