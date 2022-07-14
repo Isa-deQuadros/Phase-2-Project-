@@ -10,7 +10,6 @@ const Container = styled.div`
 
     border-top: 20px solid #1bbb18;
     background-image: url('https://img.pixers.pics/pho_wat(s3:700/FO/17/98/51/75/1/700_FO179851751_7d4a8c10ee6ccaa3d021b92c001e5ca0,700,394,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,344,jpg)/wall-murals-retro-game-controller-on-colorful-background-3d-illustration.jpg.jpg');
-  
         // DONEDONE
 
 
@@ -110,7 +109,7 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
         
                 </div> 
                 </div>
-             
+                
                     < div className="Reviews">
                         <h4> Reviews: </h4>
                         <p> 1. {reviews.first}</p>
@@ -131,6 +130,7 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
                             newReviewFormFunction={newReviewFormFunction}
                             descriptionState={descriptionState}
                             descriptionToggle={descriptionToggle}
+                            passingnotmapped={gameCardDataFromApp}
                             gameCardDataFromContainer={mappedArrayOfGames}
                             renderGame={renderGame}
                             key={mappedArrayOfGames.id} /> 

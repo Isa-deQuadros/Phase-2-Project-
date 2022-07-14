@@ -12,8 +12,8 @@ const Container = styled.div`
     justify-content: space-between;
 
     .personal-profile{
-    width: 400px;
-    height: 60px;
+    /* width: 400px;
+    height: 60px; */
     margin: 20px 20px;
     }
 
@@ -23,7 +23,6 @@ const Container = styled.div`
     margin: 20px 20px;
 
     }
-
 `
 
 function Header(){
