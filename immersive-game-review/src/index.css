@@ -28,7 +28,8 @@ code {
   }
 
   .GameListTitle {
-    background-color: #184950 ;
+    background-image: linear-gradient(to left, #ffb5e8, #b28dff, #dcd3ff,  #ffc9de, #6eb5ff);
+
     /* DONE */
   }
 
@@ -62,4 +63,10 @@ code {
     margin: auto;
     width: 100%;
     padding: 10px;
+    }
+
+    .personal-profile {
+      display: flex;
+      justify-content: center;
+      justify-content: space-evenly;
     }
