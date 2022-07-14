@@ -7,40 +7,49 @@ import NewGameForm from "./NewGameForm";
 
 
 const Container = styled.div`
+
     border-top: 20px solid #1bbb18;
+    margin-top: 65px;
+
 
     h2{
         font-size: 30px;
-        color: #edc132;
+        color: #BEA42E;
+        // DONE
     }
-    h4{
+    h3{
         font-size: 20px;
         text-align: center;
+        background-color: #657c7c;
+        margin-right: 20px
+    }
+
+    h4{
+        font-size: 30px;
+        background-color: #657c7c;
     }
     // 
     .DataDisplay{
         margin-bottom: 20px;
+        // DONE✅
     }
     .Reviews{
-        background-color: #62cda6;
+        background-color: #008080;
         max-width: 35%;
         align-self:center;
+        // DONE✅
     }
 
-    .GameTrailer{
-        // background-color: #4fc666;
-        // max-width: 50%;
-    
-    }
     .GameList{
-        background-color: #62cda6;
+        background-color: #184950;
+        // DONE✅
     }
 `
 
 const NewGameFormButton = styled.button`
-    background-color: #b659b1;
+    background-color:  #67B3E4;
     border-radius: 3px;
-    border: 5px solid gray;
+    border: 5px solid #7B895B;
     font-size: 23.5px;
     color:white;
     margin: 10px 0 20px 0;
@@ -59,7 +68,7 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
     function renderGame(gameName, gameReview, gameVideo){ 
         setTitle(gameName)
         setReviews(gameReview)
-       setUrlState(gameVideo)
+        setUrlState(gameVideo)
         
 
     }
@@ -74,7 +83,9 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
         <Container>
             <h2> {title} </h2>
             <NewGameFormButton onClick={displayForm}> Click To Add New Game</NewGameFormButton> 
-            {formDisplay ? <NewGameForm functionForForm={functionForForm}/> : null }
+            <div className="stylingform">
+                {formDisplay ? <NewGameForm functionForForm={functionForForm}/> : null }
+            </div>
             <br/>
             <div className="DataDisplay">
                 < div className="GameTrailer" >
@@ -84,18 +95,19 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
         
                 </div> 
                 </div>
-                
+             
                     < div className="Reviews">
                         <h4> Reviews: </h4>
-                        <p>{reviews.first}</p>
-                        <p>{reviews.second}</p>
-                        <p>{reviews.third}</p>
+                        <p> 1. {reviews.first}</p>
+                        <p> 2. {reviews.second}</p>
+                        <p> 3. {reviews.third}</p>
                         {/* some math function that turns the percentage into x number of controllers */}
                     </div>
 
             </div>
                 <div className="GameListTitle">
-                    <h4> Game List: </h4>         
+                    <h2> Game List: </h2>         
+
                 <div className="GameList">
                     { gameCardDataFromApp.map((mappedArrayOfGames)=>{
                         return(   
@@ -104,9 +116,8 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
                             renderGame={renderGame}
                             key={mappedArrayOfGames.id} /> 
                         )
-            
-                    })
-                }
+                        })
+                    }
                 </div>
                 </div>
         </Container>

@@ -6,7 +6,8 @@ import styled from "styled-components";
 
 const Container = styled.div`
     
-    background-color:#62cda6 ;
+    background-color:#27365a ;
+    // DONE
     margin: 1rem;
     .card
     @media (min-width: 768px) {
@@ -14,21 +15,19 @@ const Container = styled.div`
     display: flex;
     flex-wrap: wrap; 
     }
-    .card {
-    // width: calc(33% - 2rem);
-    }
-    }
-    @media (min-width: 1024px) {
-        .card {
-        // width: calc(25% - 2rem);
-    }
-    }
-    @media (min-width: 1200px) {    
-        .card {
-        // width: calc(20% - 2rem);
-        }
+   
     }
 
+    p{
+        align-self:center;
+        margin-right: 20px
+    }
+
+    button{
+        background-color:#6d936c; 
+        border-radius: 7px;
+
+    }
 `
 
 function GameCard({gameCardDataFromContainer, renderGame}){
@@ -57,10 +56,10 @@ function GameCard({gameCardDataFromContainer, renderGame}){
                 <img onClick={()=>renderGame(gameCardDataFromContainer.name, gameCardDataFromContainer.reviews, gameCardDataFromContainer.trailer)}
                 className="card_image"
                 src={gameCardDataFromContainer.imageURL}></img>
-                <h4> {gameCardDataFromContainer.name} </h4>
+                <h3> {gameCardDataFromContainer.name} </h3>
                 <p> Rating: {gameCardDataFromContainer.rating} </p>
                 <p classList="description"> {gameCardDataFromContainer.description}</p>
-                <button onClick={playAndPauseMusic}>⏯️  </button>
+                <button onClick={playAndPauseMusic}>  ▶️  ⏸ </button>
                 
 
             </div>
