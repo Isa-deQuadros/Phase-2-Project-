@@ -29,21 +29,14 @@ const Container = styled.div`
     }
 `
 
-<<<<<<< HEAD
 function GameCard({gameCardDataFromContainer, renderGame, descriptionToggle, descriptionState, newReviewFormFunction}){
    const [musicState, setMusicState] = useState(true)
    const [audio, setAudio] = useState(new Audio(gameCardDataFromContainer.score))
    const [reviewForm, setReviewForm] = useState(false)
-=======
-function GameCard({gameCardDataFromContainer, renderGame, descriptionToggle, descriptionState, passingnotmapped}){
-    const [musicState, setMusicState] = useState(true)
-    const [audio, setAudio] = useState(new Audio(gameCardDataFromContainer.score))
+   const [ upvotes, setUpVotes]= useState(0)
+   const [ downvotes, setDownVotes]= useState (0)
 
- 
-    const [ upvotes, setUpVotes]= useState(0)
-    const [ downvotes, setDownVotes]= useState (0)
 
->>>>>>> main
 
     const stop = () => {
         audio.pause(); 
@@ -73,13 +66,11 @@ useEffect(()=> {
         setDownVotes(downVTs)
     }
     
-<<<<<<< HEAD
     function displayReviewForm(){
         setReviewForm(!reviewForm)
     }
 
 
-=======
     
     function increaseLikes(){
 
@@ -110,7 +101,6 @@ useEffect(()=> {
 
 
 
->>>>>>> main
     return(
         <Container>
             <div 
