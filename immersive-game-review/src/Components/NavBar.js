@@ -21,9 +21,6 @@ const NavBar= ()=>{
                 <Link to="/games">
                     <p> Games </p>
                 </Link>
-                <Link to="/gamelist">
-                    <p> List Of Games </p>
-                </Link>
             </div>
         </Nav>
         

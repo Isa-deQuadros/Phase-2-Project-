@@ -123,6 +123,7 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
                             <GameCard 
                             descriptionState={descriptionState}
                             descriptionToggle={descriptionToggle}
+                            passingnotmapped={gameCardDataFromApp}
                             gameCardDataFromContainer={mappedArrayOfGames}
                             renderGame={renderGame}
                             key={mappedArrayOfGames.id} /> 

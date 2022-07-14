@@ -49,7 +49,10 @@ useEffect(()=>{
       < Header/>
       <Routes>
 
-        <Route path="/" element={<Home />} ></Route>
+        <Route path="/" element={<> 
+          <Home/>
+          <MainContainer gameCardDataFromApp={gameCardData} functionForForm={addNewGame}/> 
+        </>} ></Route>
         <Route path="/games" element={<MainContainer  gameCardDataFromApp={gameCardData}
         functionForForm={addNewGame}/>} ></Route>
         <Route path="/newgames" element={<NewGameForm />} ></Route>

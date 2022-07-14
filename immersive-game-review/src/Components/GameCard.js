@@ -1,6 +1,6 @@
 
 
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import styled from "styled-components";
 
 
@@ -28,13 +28,12 @@ const Container = styled.div`
     }
 `
 
-function GameCard({gameCardDataFromContainer, renderGame, descriptionToggle, descriptionState}){
+function GameCard({gameCardDataFromContainer, renderGame, descriptionToggle, descriptionState, passingnotmapped}){
     const [musicState, setMusicState] = useState(true)
     const [audio, setAudio] = useState(new Audio(gameCardDataFromContainer.score))
 
-//    const [ upvotes, setUpVotes]= useState()
-    const [ upvotes, setUpVotes]= useState(gameCardDataFromContainer.likes)
-
+ 
+    const [ upvotes, setUpVotes]= useState(0)
     const [ downvotes, setDownVotes]= useState (0)
 
 
@@ -49,12 +48,23 @@ function GameCard({gameCardDataFromContainer, renderGame, descriptionToggle, des
         return musicState ? start() : stop()
     }
 
-    function updateLikes(updatedLike){
-        const updateLike= gameCardDataFromContainer.map((like)=>
-        like.id === updatedLike.id? updatedLike : like);
-        setUpVotes(updateLike)
+useEffect(()=> {
+    setUpVotes(gameCardDataFromContainer.likes)
+    setDownVotes(gameCardDataFromContainer.dislikes)
+}, [])
 
+    function updateLikes(response){
+        let newupVotes = upvotes +1
+        console.log(newupVotes)
+
+        setUpVotes(newupVotes)
+        
     }
+    function updateDislikes(response){
+        let downVTs= downvotes +1
+        setDownVotes(downVTs)
+    }
+    
     
     function increaseLikes(){
 
@@ -69,6 +79,21 @@ function GameCard({gameCardDataFromContainer, renderGame, descriptionToggle, des
         .then(data => updateLikes(data))
 
     }
+    function DecreaseLikes(){
+
+        const config ={
+            method:"PATCH",
+            headers:{"Content-Type":"application/json"},
+            body: JSON.stringify({dislikes: gameCardDataFromContainer.dislikes +1 })
+
+        }
+        fetch(`http://localhost:3002/gameCard/${gameCardDataFromContainer.id}`, config)
+        .then(res=> res.json())
+        .then(data => updateDislikes(data))
+
+    }
+
+
 
     return(
         <Container>
@@ -80,8 +105,7 @@ function GameCard({gameCardDataFromContainer, renderGame, descriptionToggle, des
                 <h3> {gameCardDataFromContainer.name} </h3>
                 <p> Rating: {gameCardDataFromContainer.rating} </p>
                 <button onClick={increaseLikes}> {upvotes} 🔥  </button>
-                <button onClick={()=> setDownVotes( downvotes +1 )}> {downvotes}👎 </button>
-                <p classList="description"> {gameCardDataFromContainer.description}</p>
+                <button onClick={DecreaseLikes}> {downvotes}👎 </button>
                 <p classList="description"> {descriptionToggle  && gameCardDataFromContainer.description === descriptionState ? gameCardDataFromContainer.description : null }</p>
                 <button onClick={playAndPauseMusic}>  ▶️  ⏸ </button>
                 
