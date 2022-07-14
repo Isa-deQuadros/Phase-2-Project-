@@ -2,6 +2,7 @@
 
 import React, {useState, useEffect} from "react"
 import styled from "styled-components";
+import NewReviewForm from "./NewReviewForm";
 
 
 const Container = styled.div`
@@ -28,17 +29,17 @@ const Container = styled.div`
     }
 `
 
-function GameCard({gameCardDataFromContainer, renderGame, descriptionToggle, descriptionState, passingnotmapped}){
-    const [musicState, setMusicState] = useState(true)
-    const [audio, setAudio] = useState(new Audio(gameCardDataFromContainer.score))
+function GameCard({gameCardDataFromContainer, renderGame, descriptionToggle, descriptionState, newReviewFormFunction}){
+   const [musicState, setMusicState] = useState(true)
+   const [audio, setAudio] = useState(new Audio(gameCardDataFromContainer.score))
+   const [reviewForm, setReviewForm] = useState(false)
+   const [ upvotes, setUpVotes]= useState(0)
+   const [ downvotes, setDownVotes]= useState (0)
 
- 
-    const [ upvotes, setUpVotes]= useState(0)
-    const [ downvotes, setDownVotes]= useState (0)
 
 
     const stop = () => {
-        audio.pause();
+        audio.pause(); 
     }
     const start = () => {
         audio.play(); 
@@ -65,6 +66,11 @@ useEffect(()=> {
         setDownVotes(downVTs)
     }
     
+    function displayReviewForm(){
+        setReviewForm(!reviewForm)
+    }
+
+
     
     function increaseLikes(){
 
@@ -108,6 +114,10 @@ useEffect(()=> {
                 <button onClick={DecreaseLikes}> {downvotes}👎 </button>
                 <p classList="description"> {descriptionToggle  && gameCardDataFromContainer.description === descriptionState ? gameCardDataFromContainer.description : null }</p>
                 <button onClick={playAndPauseMusic}>  ▶️  ⏸ </button>
+                <button onClick={displayReviewForm}> 🎮Add Review🎮</button>
+                <div className="review-form">
+                    { reviewForm ? <NewReviewForm newReviewFormFunction={newReviewFormFunction}/> : null}
+                </div>
                 
 
             </div>
