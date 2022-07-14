@@ -25,6 +25,7 @@ const Container = styled.div`
 
     button{
         background-color:#6d936c; 
+        // DONE ✅
         border-radius: 7px;
 
     }
@@ -55,7 +56,7 @@ function GameCard({gameCardDataFromContainer, renderGame, descriptionToggle, des
             className="card">
                 <img onClick={()=>renderGame(gameCardDataFromContainer.name, gameCardDataFromContainer.reviews, gameCardDataFromContainer.trailer, gameCardDataFromContainer.description)}
                 className="card_image"
-                src={gameCardDataFromContainer.imageURL}></img>
+                src={gameCardDataFromContainer.imageURL}  alt="game_image"/>
                 <h3> {gameCardDataFromContainer.name} </h3>
                 <p> Rating: {gameCardDataFromContainer.rating} </p>
                 <p classList="description"> {descriptionToggle  && gameCardDataFromContainer.description === descriptionState ? gameCardDataFromContainer.description : null }</p>
