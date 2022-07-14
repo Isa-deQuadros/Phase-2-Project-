@@ -1,12 +1,14 @@
-import React, {useState, useEffect} from 'react'
-
+import React, { useState, useEffect } from 'react'
+import { Routes, Route } from "react-router-dom";
 
 import styled from 'styled-components'
 
 
 import Header from './Header'
-import Profile from './PersonalProfile'
 import MainContainer from './MainContainer'
+import GameCard from './GameCard'
+import NewGameForm from './NewGameForm'
+import Home from './Home'
 
 
 const Container = styled.div`
@@ -18,41 +20,49 @@ const Container = styled.div`
 
 
 
-function App(){
-const [gameCardData, setGameCardData] = useState([])
+function App() {
+  const [gameCardData, setGameCardData] = useState([])
 
-useEffect(()=>{
-  fetch("http://localhost:3002/gameCard")
-  .then(res=> res.json())
-  .then((fetchedData)=>{
-  console.log([fetchedData])
-  setGameCardData([...fetchedData])
-  })
-  },[])
+  useEffect(() => {
+    fetch("http://localhost:3002/gameCard")
+      .then(res => res.json())
+      .then((fetchedData) => {
+        console.log([fetchedData])
+        setGameCardData([...fetchedData])
+      })
+  }, [])
 
-function addNewGame(newGame){
-  console([newGame, ...gameCardData])
+  function addNewGame(newGame) {
+    console([newGame, ...gameCardData])
 
-  fetch("http://localhost:3002/gameCard",{
+    fetch("http://localhost:3002/gameCard", {
       method: "POST",
-      headers: {"Content-Type": "application/json"},
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newGame)
     })
-}
-  
+  }
+
   return (
     <Container>
+      
+      < Header/>
+     
+      <Routes>
 
-          
-          < Header />
-          <Profile />
+        <Route path="/" element={<Home />} ></Route>
+        <Route path="/games" element={<MainContainer  gameCardDataFromApp={gameCardData}
+        functionForForm={addNewGame}/>} ></Route>
+        <Route path="/newgames" element={<NewGameForm />} ></Route>
+        {/* <Route path="/profile" element={<PersonalProfile />} ></Route> */}
+        <Route path="/gamelist" element={<GameCard />} ></Route>
+      </Routes>
 
-          < MainContainer 
-                gameCardDataFromApp={gameCardData} 
-                functionForForm={addNewGame} />
-        
+      {/* < MainContainer
+        gameCardDataFromApp={gameCardData}
+        functionForForm={addNewGame} /> */}
+
     </Container>
-    
+
   )
 }
 export default App
