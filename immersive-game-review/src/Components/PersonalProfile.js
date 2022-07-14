@@ -4,27 +4,31 @@ import { useState } from "react";
 
 
 const Container = styled.div`
-    background-color:#281474 ;
-    width: 25%;
-
+    background-color:#657c7c ;
+    // DONE
+    
+    .avatar-box{
+    
+    }
 `
 
 const Modal = styled.div`
-    position: fixed;
-    background-color: #000000;
+    // position: fixed;
+    background-color: #008080;
+    // DONE
     opacity: 85%;
     display: flex;
     align-items: center;
     justify-content: center;
 `
 const Content= styled.div`
-        background-color: #fff;
-        color: black;
+        // background-color: white
+        // color: black;
 
     
-    .modal-header{
-        padding: 10px;
-    }
+    // .modal-header{
+        // padding: 10px;
+    // }
 
     .modal-body{
         padding: 10px;
@@ -43,12 +47,15 @@ function Profile(){
 
 
 
-
     return(
         <Container id="profile">
-            <img onClick={setProfileToggle} src ="https://st2.depositphotos.com/1288156/49269/v/380/depositphotos_492694300-stock-illustration-blank-placeholder-profile-picture-vector.jpg?forcejpeg=true"
+
+            <img className="avatar-box" 
+            onClick={setProfileToggle}  
+            alt="avatar" 
+            src ="https://cdn.discordapp.com/attachments/976609407276298250/997013793211166781/MUSIC_APP.png"
                 height={60} 
-                width= {60}
+                width= {70}
                 quality={100}
                 />
             {openProfile? 
