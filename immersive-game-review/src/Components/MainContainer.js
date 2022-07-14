@@ -17,6 +17,7 @@ const Container = styled.div`
 
 
 
+
     h2{
         font-size: 30px;
         color: #e60333;
@@ -126,7 +127,7 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
         
                 </div> 
                 </div>
-             
+                
                     < div className="Reviews">
                         <h4> Reviews: </h4>
                         <p> 1. {reviews.first}</p>
@@ -145,6 +146,7 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
                             <GameCard 
                             descriptionState={descriptionState}
                             descriptionToggle={descriptionToggle}
+                            passingnotmapped={gameCardDataFromApp}
                             gameCardDataFromContainer={mappedArrayOfGames}
                             renderGame={renderGame}
                             key={mappedArrayOfGames.id} /> 

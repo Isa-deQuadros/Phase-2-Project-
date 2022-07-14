@@ -15,20 +15,23 @@ const Container = styled.div`
 const Modal = styled.div`
     // position: fixed;
     // background-color: #008080;
+    right: 20px;
     // DONE
     opacity: 85%;
     // align-items: center;
     // justify-content: center;
+
 `
 const Content= styled.div`
         background-color: #935891;
         // color: black;
+        width: 400px;
+        margin-right: 10px;
 
 
     .modal-body{
         padding: 15px;
         border-top: 1px solid #eee;
-        border-bottom: 1px solid #eee;
     }
 
     h6 {
@@ -47,10 +50,10 @@ function Profile(){
 
 
     return(
-        <Container id="profile">
+        <Container id="profile"  onClick={setProfileToggle} >
 
             <img className="avatar-box" 
-            onClick={setProfileToggle}  
+            
             alt="avatar" 
             src ="https://cdn.discordapp.com/attachments/976609407276298250/997013793211166781/MUSIC_APP.png"
                 height={60} 
@@ -61,10 +64,16 @@ function Profile(){
             (<Modal>
                 <Content>
                 <div className="modal-header">
-                    <h4 className="modal-title"> Hello Cohort B </h4>
+
+                    <h4 className="modal-title"> ✨ Hello Cohort B ✨ </h4>
+
                         <div className="modal-body">
-                            <h6>Favorite Game: </h6>
-                            <h6> Favorite Score: </h6>
+                            <h3>Favorite Game: Super Mario Sunshine</h3>
+                            <p> Bio: Iris, Keegan, and Isa are Software engineers who love to game.
+                                Here are their favorite games, and their idea for an immersive 
+                                game review experience. Enjoy the music, and add your favorites
+                                to the mix. 
+                            </p>
                         </div>
                 </div>
                 </Content>
