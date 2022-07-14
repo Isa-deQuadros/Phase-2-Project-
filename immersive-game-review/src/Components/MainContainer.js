@@ -9,24 +9,29 @@ import NewGameForm from "./NewGameForm";
 const Container = styled.div`
 
     border-top: 20px solid #1bbb18;
-    margin-top: 65px;
+    background-image: url('https://img.pixers.pics/pho_wat(s3:700/FO/17/98/51/75/1/700_FO179851751_7d4a8c10ee6ccaa3d021b92c001e5ca0,700,394,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,344,jpg)/wall-murals-retro-game-controller-on-colorful-background-3d-illustration.jpg.jpg');
+  
+        // DONEDONE
+
 
 
     h2{
         font-size: 30px;
-        color: #BEA42E;
-        // DONE
+        color: #e60333;
+        // DONE✅
     }
     h3{
         font-size: 20px;
         text-align: center;
         background-color: #657c7c;
+        // DONE✅
         margin-right: 20px
     }
 
     h4{
         font-size: 30px;
-        background-color: #657c7c;
+        background-color: #01426e;
+        // DONE 
     }
     // 
     .DataDisplay{
@@ -41,17 +46,19 @@ const Container = styled.div`
     }
 
     .GameList{
-        background-color: #184950;
+        background-image: linear-gradient( to top, white, #5362c4, #334379);
         // DONE✅
     }
 `
 
 const NewGameFormButton = styled.button`
-    background-color:  #67B3E4;
+    background-color: teal;
+    // DONE✅
     border-radius: 3px;
-    border: 5px solid #7B895B;
+    border: 5px solid #065b64;
+    // DONE✅
     font-size: 23.5px;
-    color:white;
+    // color:white;
     margin: 10px 0 20px 0;
 `
 
