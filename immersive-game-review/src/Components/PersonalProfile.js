@@ -4,11 +4,12 @@ import { useState } from "react";
 
 
 const Container = styled.div`
-    background-color:white ;
+    // background-color:white ;
     // DONE
     
     .avatar-box{
         // padding: 0px;
+        max-width:25px;
     }
 `
 
