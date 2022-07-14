@@ -13,7 +13,7 @@ between the individual elements.
 - Users will be able to interact with the webpage and review games while hearing the soundtracks to all their favorite games.
 - Users can interact with games in the games list by clicking on their images to toggle their description, reviews section, and even display the games' video trailer!
 - Users can interact with a play/pause button assigned to each game within the games list in order to play that games soundtrack in the background. Simply click the ▶️ button to start the music and click the ⏸ button to pause the music. 
-User can rate the video games on the website by increasing its rating with 🔥 or decrease the rating with 👎.
+User can rate the video games on the website by increasing its rating with🔥 or decrease the rating with👎.
 - Users will also be able to add new games for review and their corresponding soundtracks/ trailers. Simply click on the "Click to Add New Game" button to display the submission form. 
 - User can navigate the apps' routes by clicking on the NavBar in the upper lefthand corner of the app. 
 - User can review their personal profile in the upper right hand corner of the app, which displays their name, favorite game, and bio. 
