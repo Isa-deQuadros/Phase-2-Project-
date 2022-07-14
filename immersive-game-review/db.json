@@ -8,6 +8,8 @@
       "genre": "Action-adventure Platformer",
       "platform": "Nintendo Switch, Xbox One, Microsoft Windows",
       "rating": 8.5,
+      "likes":0,
+      "dislikes":0,
       "description": "Help Ori, a guardian spirit, save the forest. Follow their adventure as they explore the forest and revive the spirit tree by collecting the light element orbs of Water, Winds, and Warmth.",
       "imageURL": "https://www.gameinformer.com/s3/files/styles/body_default/s3/legacy-images/imagefeed/Beauty%20In%20Death/oriandblindforesthero.jpg",
       "trailer": " https://youtu.be/MeVFrt7BUyw",

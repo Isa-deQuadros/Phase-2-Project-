@@ -50,7 +50,7 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
     const [title, setTitle] = useState("Title of Game")
     const [reviews, setReviews] = useState("")
     const [formDisplay, setFormDisplay] = useState(false)
-    const [url, setUrlState] = useState("")
+    const [url, setUrlState] = useState("") 
 
 
 
