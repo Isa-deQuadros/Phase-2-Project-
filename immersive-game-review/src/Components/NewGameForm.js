@@ -17,7 +17,7 @@ const Container = styled.div`
         margin: 7px 0px 7px 10px;
     }
     button{
-        margin: 10px;
+        margin: 200px;
     }
 
 

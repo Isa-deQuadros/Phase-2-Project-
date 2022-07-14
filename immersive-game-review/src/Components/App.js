@@ -12,9 +12,9 @@ import Home from './Home'
 
 
 const Container = styled.div`
-  background-color: #310ca9;
-  color:white;
-  text-align: center; 
+  // background-color: #310ca9;
+  // color: #82f0f0;
+  // text-align: center; 
 `
 
 
@@ -49,22 +49,15 @@ useEffect(()=>{
       < Header/>
       <Routes>
 
-        <Route path="/" element={<> 
-          <Home/>
-          <MainContainer gameCardDataFromApp={gameCardData} functionForForm={addNewGame}/> 
-        </>} ></Route>
+        <Route path="/" element={
+          <Home/>}>
+        </Route>
         <Route path="/games" element={<MainContainer  gameCardDataFromApp={gameCardData}
         functionForForm={addNewGame}/>} ></Route>
         <Route path="/newgames" element={<NewGameForm />} ></Route>
       </Routes>
 
-      {/* < MainContainer
-        gameCardDataFromApp={gameCardData}
-        functionForForm={addNewGame} /> */}
-
-
     </Container>
-
   )
 }
 export default App
