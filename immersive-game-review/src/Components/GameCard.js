@@ -8,6 +8,7 @@ const Container = styled.div`
     
     background-color:#62cda6 ;
     margin: 1rem;
+    .card
     @media (min-width: 768px) {
         .cards {
     display: flex;

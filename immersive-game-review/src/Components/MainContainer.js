@@ -17,6 +17,7 @@ const Container = styled.div`
         font-size: 20px;
         text-align: center;
     }
+    // 
     .DataDisplay{
         margin-bottom: 20px;
     }
