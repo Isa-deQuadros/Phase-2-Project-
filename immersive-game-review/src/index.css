@@ -27,11 +27,13 @@ code {
     /* DONE */
   }
 
-  .GameListTitle {
+  .GameListBar {
     background-image: linear-gradient(to left, #ffb5e8, #b28dff, #dcd3ff,  #ffc9de, #6eb5ff);
-
+    text-align: center; 
     /* DONE */
+ 
   }
+
 
   .description {
     display: block;
@@ -69,4 +71,15 @@ code {
       display: flex;
       justify-content: center;
       justify-content: space-evenly;
+    }
+
+    #profile {
+      max-width: max-content;
+      height: 60px;
+      border-radius: 17px; 
+      align-items: center;
+    }
+
+    .modal-body{
+      opacity: 85%;
     }

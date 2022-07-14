@@ -8,10 +8,12 @@ import NewGameForm from "./NewGameForm";
 
 const Container = styled.div`
 
-    border-top: 20px solid #1bbb18;
-    background-image: url('https://img.pixers.pics/pho_wat(s3:700/FO/17/98/51/75/1/700_FO179851751_7d4a8c10ee6ccaa3d021b92c001e5ca0,700,394,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,344,jpg)/wall-murals-retro-game-controller-on-colorful-background-3d-illustration.jpg.jpg');
-  
-        // DONEDONE
+    border-top: 20px ridge #ae9;
+    // DONE✅
+
+
+    background-image: linear-gradient( to top, #5d77b9, #181349);
+    //DONE✅
 
 
 
@@ -23,17 +25,21 @@ const Container = styled.div`
     h3{
         font-size: 20px;
         text-align: center;
-        background-color: #657c7c;
+        background-color: #6d9a62;
+        border-bottom: 5px ridge #ae9;
         // DONE✅
         margin-right: 20px
     }
 
     h4{
+        color: #342d86;
         font-size: 30px;
-        background-color: #01426e;
-        // DONE 
+        background-image: linear-gradient(to left, #ffb5e8, #b28dff, #dcd3ff,  #ffc9de, #6eb5ff);
+        // DONE ✅
+        text-align: center; 
+        text-shadow: 1.3px 1px #1f3063; 
     }
-    // 
+    
     .DataDisplay{
         margin-bottom: 20px;
         // DONE✅
@@ -46,8 +52,24 @@ const Container = styled.div`
     }
 
     .GameList{
-        background-image: linear-gradient( to top, white, #5362c4, #334379);
+        background-image: linear-gradient( to top, purple, #5362c4, #334379);
         // DONE✅
+    }
+
+    .GameListBarText {
+        color: #342d86;
+        // DONE✅
+
+        text-shadow: 1.3px 1px #1f3063; 
+        font-size: 35px;
+    }
+
+    .Responsive_Game_Title{
+        color: #d7bed8;
+        // DONE✅
+        text-shadow: 1.3px 1px #1f3063; 
+        font-size: 35px;
+        text-align: center; 
     }
 `
 
@@ -58,7 +80,6 @@ const NewGameFormButton = styled.button`
     border: 5px solid #065b64;
     // DONE✅
     font-size: 23.5px;
-    // color:white;
     margin: 10px 0 20px 0;
 `
 
@@ -91,7 +112,7 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
     return(
         
         <Container>
-            <h2> {title} </h2>
+            <h2 className="Responsive_Game_Title">  {title} </h2>
             <NewGameFormButton onClick={displayForm}> Click To Add New Game</NewGameFormButton> 
             <div className="stylingform">
                 {formDisplay ? <NewGameForm functionForForm={functionForForm}/> : null }
@@ -115,8 +136,8 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
                     </div>
 
             </div>
-                <div className="GameListTitle">
-                    <h2> Game List: </h2>         
+                <div className="GameListBar">
+                    <h2 className="GameListBarText"> Game List: </h2>         
 
                 <div className="GameList">
                     { gameCardDataFromApp.map((mappedArrayOfGames)=>{
