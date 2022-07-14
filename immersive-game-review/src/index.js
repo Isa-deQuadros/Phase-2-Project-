@@ -1,16 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from '../src/Components/App';
 import reportWebVitals from './reportWebVitals';
 import {render} from 'react-dom';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
+import App from '../src/Components/App';
 import Header from './Components/Header'
 import PersonalProfile from './Components/PersonalProfile'
 import MainContainer from './Components/MainContainer'
 import NewGameForm from './Components/NewGameForm'
-import GameCard from './Components/GameCard'
+import NavBar from './Components/NavBar';
+// import GameCard from './Components/GameCard'
 
 
 
@@ -22,7 +23,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
     <Routes>
-        <Route exact path="/" element={<App />} />
+        <Route path="/" element={<App />} />
         <Route path="/header" element={<Header />} />
         <Route path="/games" element={<MainContainer />} />
         <Route path="games/Form" element={<NewGameForm />} />
