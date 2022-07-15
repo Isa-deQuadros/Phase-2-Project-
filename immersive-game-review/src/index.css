@@ -14,71 +14,156 @@ code {
 
 .card_image {
   width: 200px;
-    height: 120px;
-    margin: 3px;
-    padding: 3px;
+  height: 120px;
+  margin: 3px;
+  padding: 3px;
 
 }
 
 .GameList {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    /* DONE */
-  }
+  display: grid;
+  grid-template-columns: auto auto auto;
+  /* DONE */
+}
 
-  .GameListBar {
-    background-image: linear-gradient(to left, #ffb5e8, #b28dff, #dcd3ff,  #ffc9de, #6eb5ff);
-    text-align: center; 
-    /* DONE */
- 
-  }
+.GameListBar {
+  background-image: linear-gradient(to left, #ffb5e8, #b28dff, #dcd3ff, #ffc9de, #6eb5ff);
+  text-align: center;
+  /* DONE */
+
+}
 
 
-  .description {
-    display: block;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-left: 0;
-    margin-right: 0;
+.description {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
 
-  }
+}
 
-  .DataDisplay {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    margin-bottom: 27px ;
-    flex-wrap: wrap;
-  }
+.DataDisplay {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin-bottom: 27px;
+  flex-wrap: wrap;
+}
+
+
+.card p {
+  text-align: center;
+  /* width: 200px; */
+
+
+}
+
+.card {
+  text-align: center;
+  margin: auto;
+  width: 100%;
+  padding: 10px;
+}
+
+.personal-profile {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  /* flex-wrap: wrap;
+  flex-direction: column; */
+}
+
+#profile { 
+   /* max-width: max-content; */
+  height: 60px;
+  border-radius: 17px;
+  align-items: center;
+}
+
+.modal-body {
+  opacity: 85%;
+  /* height: max-content; */
+}
+
+ .NewGameToggleButton { 
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 18%;
+} 
+
+.route-container{
+  flex: 1;
+  display: flex;
+  align-items:  center;
+  justify-content: center;
+  background-image: url('https://wallpaperaccess.com/full/439822.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  /* background-size: contain; */
+  background-size: cover;
+}
+
+.main-footer {
+  color: white;
+  background-color: rgb(12, 7, 61);
+  /* padding-top: 1em; */
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+
+
+
+.avatar-box{
+  background-color:white ;
+  border-radius: 15px;
+  width: 100px;
   
+}
+
+.nav-menu{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   
-  .card p {
-    text-align: center;
-    /* width: 200px; */
-    
-     
-  }
+} 
+.modal-header{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 
-  .card {
-    text-align: center;
-    margin: auto;
-    width: 100%;
-    padding: 10px;
-    }
+.link{
+  text-decoration: none;
 
-    .personal-profile {
-      display: flex;
-      justify-content: center;
-      justify-content: space-evenly;
-    }
+}
 
-    #profile {
-      max-width: max-content;
-      height: 60px;
-      border-radius: 17px; 
-      align-items: center;
-    }
+.home-words{
+  color: white;
+  text-align: center;
+}
 
-    .modal-body{
-      opacity: 85%;
-    }
+.home-wrapper{
+  background-color: #1a0c54;
+  opacity: 90%;
+  border-radius: 6px;
+  padding: 10px 10px 10px 10px;
+}
+
+.footer-words{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.form{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}

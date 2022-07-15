@@ -36,9 +36,8 @@ function NewReviewForm({newReviewFormFunction}){
                 }
 
                newReviewFormFunction(newReview)
-
-                }
-                
+            }
+            
             )}>
                 <input type="text" placeholder='Type Review Here...' value={reviewState} onChange={(event)=>setReviewState(event.target.value)}/>
                 <button type="submit" >Add Review</button>

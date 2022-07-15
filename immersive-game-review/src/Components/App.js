@@ -6,7 +6,8 @@ import styled from 'styled-components'
 
 import Header from './Header'
 import MainContainer from './MainContainer'
-import GameCard from './GameCard'
+// import GameCard from './GameCard'
+import Footer from './Footer.js'
 import NewGameForm from './NewGameForm'
 import Home from './Home'
 
@@ -15,6 +16,9 @@ const Container = styled.div`
   // background-color: #310ca9;
   // color: #82f0f0;
   // text-align: center; 
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 `
 
 
@@ -24,17 +28,17 @@ function App() {
   const [gameCardData, setGameCardData] = useState([])
 
 
-useEffect(()=>{
-  fetch("http://localhost:3002/gameCard")
-  .then(res=> res.json())
-  .then((fetchedData)=>{
-  setGameCardData([...fetchedData])
-  })
-  },[])
+  useEffect(() => {
+    fetch("http://localhost:3002/gameCard")
+      .then(res => res.json())
+      .then((fetchedData) => {
+        setGameCardData([...fetchedData])
+      })
+  }, [])
 
 
   function addNewGame(newGame) {
-    console([newGame, ...gameCardData])
+    setGameCardData([newGame, ...gameCardData])
 
     fetch("http://localhost:3002/gameCard", {
       method: "POST",
@@ -46,16 +50,23 @@ useEffect(()=>{
   return (
     <Container>
 
-      < Header/>
-      <Routes>
+      < Header />
+      <div className='route-container'>
+        <Routes>
+          <Route path="/" element={
+            <Home />}>
+          </Route>
+          <Route path="/newgames" element={<NewGameForm />} ></Route>
+        </Routes>
+      
 
-        <Route path="/" element={
-          <Home/>}>
-        </Route>
-        <Route path="/games" element={<MainContainer  gameCardDataFromApp={gameCardData}
-        functionForForm={addNewGame}/>} ></Route>
-        <Route path="/newgames" element={<NewGameForm />} ></Route>
-      </Routes>
+        <Routes>
+          <Route path="/games" element={<MainContainer gameCardDataFromApp={gameCardData}
+            functionForForm={addNewGame} />} ></Route>
+        </Routes>
+
+      </div>
+      <Footer/>
 
     </Container>
   )

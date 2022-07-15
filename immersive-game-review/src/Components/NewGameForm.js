@@ -4,23 +4,25 @@ import styled from 'styled-components'
 
 
 const Container = styled.div`
-// DO THIS SECTION TONIGHT
-    width: 350px;
-    height: fit-content;
-    border: 2px solid black;
+    width: 50%;
+    border: 3px ridge #ae9;
     padding: 10px;
+    // DONE✅
 
-    input{
-        margin: 7px 10px 7px 10px;
-    }
     select{
-        margin: 7px 0px 7px 10px;
-    }
-    button{
-        margin: 200px;
+        margin: 7px 10px 7px 10px;
+    // DONE✅
     }
 
-
+    .new_game_form{
+        text-align: center; 
+        // DONE✅
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        font-weight: 30px;
+    }
 `
 
 function NewGameForm({functionForForm}){
@@ -34,8 +36,11 @@ function NewGameForm({functionForForm}){
     const [soundtrackState, setSoundtrackState] = useState("")
 
     return (
-        <Container id="form">
-            <form onSubmit={((event) => {
+        <Container >
+            <div className="form">
+
+            
+            <form className="new_game_form" onSubmit={((event) => {
                 event.preventDefault()
 
                 let newGame = {
@@ -75,6 +80,7 @@ function NewGameForm({functionForForm}){
                 <br/>
                 <button type="submit" >Add Game</button>
             </form>
+            </div>
         </Container>
     )
 }
