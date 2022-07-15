@@ -48,7 +48,9 @@ function NewGameForm({functionForForm}){
                     reviews: reviewState,
                     rating: ratingState,
                     imageURL: coverState,
-                    score: soundtrackState
+                    score: soundtrackState,
+                    likes: 0,
+                    dislikes: 0,
                 }
                 functionForForm(newGame)
             }

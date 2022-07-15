@@ -7,9 +7,7 @@ const Searchs = styled.div`
         background-color: #ae9;
         height: 25px;
         width: 250px;
-    } 
-
-
+    }
 `
 
 
