@@ -14,7 +14,6 @@ const Nav = styled.div`
     padding: 10px 15px 10px 15px;
     margin-left: 115px;
     border-radius: 15px;
-    // DONE✅
 `
 
 
@@ -26,12 +25,13 @@ const NavBar= ()=>{
                 <Link to="/" className="link">
                     Home
                 </Link>
-                <Link to="/newgames" className="link">
-                    Add a New Game
-                </Link>
                 <Link to="/games" className="link">
                      Games 
                 </Link>
+                <Link to="/newgames" className="link">
+                    Add a New Game
+                </Link>
+               
             </div>
         </Nav>
         

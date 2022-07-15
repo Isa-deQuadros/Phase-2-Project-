@@ -1,27 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import { Routes, Route } from "react-router-dom";
-
 import styled from 'styled-components'
 
 
 import Header from './Header'
 import MainContainer from './MainContainer'
-// import GameCard from './GameCard'
 import Footer from './Footer.js'
 import NewGameForm from './NewGameForm'
 import Home from './Home'
 
 
 const Container = styled.div`
-  // background-color: #310ca9;
-  // color: #82f0f0;
-  // text-align: center; 
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 `
-
-
 
 
 function App() {
@@ -91,11 +84,3 @@ useEffect(()=>{
   )
 }
 export default App
-
-
-//App
-//Header
-  //NavBar
-//Profile
-//MainContainer
-  //NewGameForm  //GameCard //ResponsivePlayer
