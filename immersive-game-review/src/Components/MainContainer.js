@@ -12,12 +12,8 @@ const Container = styled.div`
     border-top: 20px ridge #ae9;
     // DONE✅
 
-
     background-image: linear-gradient( to top, #5d77b9, #181349);
     //DONE✅
-
-
-
 
     h2{
         font-size: 30px;
@@ -32,7 +28,6 @@ const Container = styled.div`
         // DONE✅
         margin-right: 20px
     }
-
     h4{
         color: #342d86;
         font-size: 30px;
@@ -47,7 +42,8 @@ const Container = styled.div`
         // DONE✅
     }
     .Reviews{
-        background-color: #008080;
+        background-color: #72a881;
+        border: 11px double #AFCBFF;
         max-width: 35%;
         align-self:center;
         // DONE✅
@@ -61,7 +57,6 @@ const Container = styled.div`
     .GameListBarText {
         color: #342d86;
         // DONE✅
-
         text-shadow: 1.3px 1px #1f3063; 
         font-size: 35px;
     }
@@ -76,13 +71,14 @@ const Container = styled.div`
 `
 
 const NewGameFormButton = styled.button`
-    background-color: teal;
+    background-color: #6d9a62;
     // DONE✅
     border-radius: 3px;
-    border: 5px solid #065b64;
+    border: 6px ridge #ae9;
     // DONE✅
     font-size: 23.5px;
-    margin: 10px 0 20px 0;
+    text-shadow: 1.5px 1px #1f3063; 
+
 `
 
 function GamesContainer({gameCardDataFromApp, functionForForm, handleingtheSearch}){
@@ -120,7 +116,7 @@ function GamesContainer({gameCardDataFromApp, functionForForm, handleingtheSearc
         
         <Container>
             <h2 className="Responsive_Game_Title">  {title} </h2>
-            <NewGameFormButton onClick={displayForm}> Click To Add New Game</NewGameFormButton> 
+            <NewGameFormButton className="NewGameToggleButton" onClick={displayForm}> Click To Add New Game</NewGameFormButton> 
             <div className="stylingform">
                 {formDisplay ? <NewGameForm functionForForm={functionForForm}/> : null }
             </div>
