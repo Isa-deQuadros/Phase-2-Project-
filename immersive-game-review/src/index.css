@@ -129,6 +129,7 @@ code {
   flex-direction: column;
   gap: 15px;
   
+
 } 
 .modal-header{
   display: flex;
@@ -167,3 +168,5 @@ code {
   justify-content: center;
   align-items: center;
 }
+
+  

@@ -13,6 +13,8 @@ const Container = styled.div`
         margin: 7px 10px 7px 10px;
     // DONE✅
     }
+    .forms{
+
 
     .new_game_form{
         text-align: center; 
@@ -23,6 +25,10 @@ const Container = styled.div`
         align-items: center;
         font-weight: 30px;
     }
+
+ 
+
+
 `
 
 function NewGameForm({functionForForm}){
@@ -51,7 +57,9 @@ function NewGameForm({functionForForm}){
                     reviews: reviewState,
                     rating: ratingState,
                     imageURL: coverState,
-                    score: soundtrackState
+                    score: soundtrackState,
+                    likes: 0,
+                    dislikes: 0,
                 }
                 functionForForm(newGame)
             }

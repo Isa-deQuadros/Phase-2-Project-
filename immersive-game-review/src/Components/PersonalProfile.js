@@ -4,11 +4,13 @@ import { useState } from "react";
 
 
 const Container = styled.div`
+
    padding-right: 120px;
    padding-top: 20px;
    padding-bottom: 20px;
     // display: flex;
     // flex-wrap: wrap;
+
     // DONE
  
     
@@ -64,6 +66,7 @@ function Profile() {
                     width={120}
                     quality={100}
                 />
+
             </div>
            
                 {openProfile ?
@@ -86,6 +89,7 @@ function Profile() {
                     </Modal>)
                     : null}
            
+
 
 
         </Container>
