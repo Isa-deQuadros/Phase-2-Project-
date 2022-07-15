@@ -19,7 +19,9 @@ const Container = styled.div`
     button{
         margin: 200px;
     }
+    .forms{
 
+    }
 
 `
 

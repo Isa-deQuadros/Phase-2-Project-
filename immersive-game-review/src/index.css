@@ -73,7 +73,7 @@ code {
     }
 
     #profile {
-      max-width: max-content;
+      /* max-width: max-content; */
       height: 60px;
       border-radius: 17px; 
       align-items: center;

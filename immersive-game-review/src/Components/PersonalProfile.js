@@ -4,7 +4,7 @@ import { useState } from "react";
 
 
 const Container = styled.div`
-    // background-color:white ;
+    background-color:white ;
     // DONE
     
     .avatar-box{
@@ -65,9 +65,8 @@ function Profile(){
             (<Modal>
                 <Content>
                 <div className="modal-header">
-
                     <h4 className="modal-title"> ✨ Hello Cohort B ✨ </h4>
-
+                </div>
                         <div className="modal-body">
                             <h3>Favorite Game: Super Mario Sunshine</h3>
                             <p> Bio: Iris, Keegan, and Isa are Software engineers who love to game.
@@ -76,7 +75,6 @@ function Profile(){
                                 to the mix. 
                             </p>
                         </div>
-                </div>
                 </Content>
             </Modal>) 
             : null}

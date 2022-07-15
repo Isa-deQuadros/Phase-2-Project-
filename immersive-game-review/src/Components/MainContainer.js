@@ -4,6 +4,7 @@ import React, {useState} from "react"
 import GameCard from "./GameCard";
 import ResponsivePlayer from "./ResponsivePlayer";
 import NewGameForm from "./NewGameForm";
+import Searchbar from "./SearchBar";
 
 
 const Container = styled.div`
@@ -84,7 +85,7 @@ const NewGameFormButton = styled.button`
     margin: 10px 0 20px 0;
 `
 
-function GamesContainer({gameCardDataFromApp, functionForForm}){
+function GamesContainer({gameCardDataFromApp, functionForForm, handleingtheSearch}){
     
     const [title, setTitle] = useState("Title of Game")
     const [reviews, setReviews] = useState("")
@@ -144,7 +145,8 @@ function GamesContainer({gameCardDataFromApp, functionForForm}){
 
             </div>
                 <div className="GameListBar">
-                    <h2 className="GameListBarText"> Game List: </h2>         
+                    <h2 className="GameListBarText"> Game List: </h2> 
+                    <Searchbar handleingtheSearch={handleingtheSearch}/>        
 
                 <div className="GameList">
                     { gameCardDataFromApp.map((mappedArrayOfGames)=>{

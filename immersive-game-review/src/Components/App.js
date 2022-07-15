@@ -22,6 +22,7 @@ const Container = styled.div`
 
 function App() {
   const [gameCardData, setGameCardData] = useState([])
+  const [searching, setSearchingThings] = useState([])
 
 
 useEffect(()=>{
@@ -29,18 +30,31 @@ useEffect(()=>{
   .then(res=> res.json())
   .then((fetchedData)=>{
   setGameCardData([...fetchedData])
+  setSearchingThings(fetchedData)
   })
   },[])
 
 
   function addNewGame(newGame) {
-    console([newGame, ...gameCardData])
+    setGameCardData([newGame, ...gameCardData])
 
     fetch("http://localhost:3002/gameCard", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newGame)
     })
+  }
+
+  function handleingtheSearch(thethingsItypeintotheSearchBar){
+    let resultofSearch= searching.filter((whatItype)=> {
+      if(whatItype.name.toLowerCase().includes(thethingsItypeintotheSearchBar.toLowerCase())){
+        return whatItype
+      }else if (whatItype.genre.toLowerCase().includes(thethingsItypeintotheSearchBar.toLowerCase())){
+        return whatItype
+      }
+    })
+    setGameCardData(resultofSearch)
+
   }
 
   return (
@@ -53,7 +67,7 @@ useEffect(()=>{
           <Home/>}>
         </Route>
         <Route path="/games" element={<MainContainer  gameCardDataFromApp={gameCardData}
-        functionForForm={addNewGame}/>} ></Route>
+        functionForForm={addNewGame} handleingtheSearch={handleingtheSearch}/>} ></Route>
         <Route path="/newgames" element={<NewGameForm />} ></Route>
       </Routes>
 
