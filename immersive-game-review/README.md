@@ -7,7 +7,16 @@ Users can also play game trailers to checkout potential new games, add new games
 clicking "the add new game" button. Use the Nav bar in the top left hand corner to navigate 
 between the individual elements.
 
+### Set Up:
+- Type in terminal:
+    npm install
+- Followed by:
+    npm start
+* This should allow you to get React up and running the code
 
+- In a separate terminal, type:
+    json-server --watch db.json --port 3002
+* This will allow you to view via Local Host the data found in our db.json
 
 ## HOW OUR WEBSITE WORKS
 - Users will be able to interact with the webpage and review games while hearing the soundtracks to all their favorite games.
