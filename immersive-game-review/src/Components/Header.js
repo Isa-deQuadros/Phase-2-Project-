@@ -9,17 +9,7 @@ const Container = styled.div`
     
     padding: 10px 0 15px 0;
     display:flex;
-    // flex-direction: row;
     justify-content: space-between;
-    
-//     display: flex;
-//   justify-content: space-around;
-//   align-items: center;
-//   min-height: 8vh;
-//   background-color: rgb(87, 91, 85);
-//   position:sticky;
-//   top: 0px;
-    
 
     .nav-image{
     width: 100px;
@@ -46,16 +36,12 @@ function Header() {
                     height={35}
                     width={35}
                     alt="nav_image"
-
                     onClick={ToggleNavBar} />
                 {openNav ? <NavBar /> : null}
-           
             </div>
             <div className="personal-profile">
                 <PersonalProfile />
             </div>
-
-            
         </Container>
     )
 }

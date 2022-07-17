@@ -1,5 +1,3 @@
-
-
 import React, {useState, useEffect} from "react"
 import styled from "styled-components";
 import NewReviewForm from "./NewReviewForm";
@@ -8,22 +6,23 @@ import NewReviewForm from "./NewReviewForm";
 const Container = styled.div`
     
     background-color:#27365a ;
-    // DONE
     margin: 1rem;
+
     .card{
     @media (min-width: 768px) {
         .cards {
-    display: flex;
-    flex-wrap: wrap; 
-    }
+            display: flex;
+            flex-wrap: wrap; 
+        }
     }}
+    
     p{
         align-self:center;
         margin-right: 20px
     }
+
     button{
         background-color:#6d936c; 
-        // DONE ✅
         border-radius: 7px;
 
     }

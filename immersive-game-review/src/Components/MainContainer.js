@@ -10,60 +10,52 @@ import Searchbar from "./SearchBar";
 const Container = styled.div`
 
     border-top: 20px ridge #ae9;
-    // DONE✅
-
     background-image: linear-gradient( to top, #5d77b9, #181349);
-    //DONE✅
 
     h2{
         font-size: 30px;
         color: #e60333;
-        // DONE✅
     }
+
     h3{
         font-size: 20px;
         text-align: center;
         background-color: #6d9a62;
         border-bottom: 5px ridge #ae9;
-        // DONE✅
         margin-right: 20px
     }
+
     h4{
         color: #342d86;
         font-size: 30px;
         background-image: linear-gradient(to left, #ffb5e8, #b28dff, #dcd3ff,  #ffc9de, #6eb5ff);
-        // DONE ✅
         text-align: center; 
         text-shadow: 1.3px 1px #1f3063; 
     }
     
     .DataDisplay{
         margin-bottom: 20px;
-        // DONE✅
     }
+
     .Reviews{
         background-color: #72a881;
         border: 11px double #AFCBFF;
         max-width: 35%;
         align-self:center;
-        // DONE✅
     }
 
     .GameList{
         background-image: linear-gradient( to top, purple, #5362c4, #334379);
-        // DONE✅
     }
 
     .GameListBarText {
         color: #342d86;
-        // DONE✅
         text-shadow: 1.3px 1px #1f3063; 
         font-size: 35px;
     }
 
     .Responsive_Game_Title{
         color: #d7bed8;
-        // DONE✅
         text-shadow: 1.3px 1px #1f3063; 
         font-size: 35px;
         text-align: center; 
@@ -72,13 +64,10 @@ const Container = styled.div`
 
 const NewGameFormButton = styled.button`
     background-color: #6d9a62;
-    // DONE✅
     border-radius: 3px;
     border: 6px ridge #ae9;
-    // DONE✅
     font-size: 23.5px;
     text-shadow: 1.5px 1px #1f3063; 
-
 `
 
 function GamesContainer({gameCardDataFromApp, functionForForm, handleingtheSearch}){
@@ -129,7 +118,6 @@ function GamesContainer({gameCardDataFromApp, functionForForm, handleingtheSearc
         
                 </div> 
                 </div>
-                
                     < div className="Reviews">
                         <h4> Reviews: </h4>
                         <p> 1. {reviews.first}</p>
@@ -138,7 +126,6 @@ function GamesContainer({gameCardDataFromApp, functionForForm, handleingtheSearc
                         <p> 4. {newReviewState.reviews}</p>
                         {/* some math function that turns the percentage into x number of controllers */}
                     </div>
-
             </div>
                 <div className="GameListBar">
                     <h2 className="GameListBarText"> Game List: </h2> 

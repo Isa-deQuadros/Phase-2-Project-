@@ -3,7 +3,6 @@ import styled from "styled-components"
 
 
 const Container = styled.div`
-// DO THIS SECTION TONIGHT
     width: 350px;
     height: fit-content;
     border: 2px solid black;
@@ -29,15 +28,11 @@ function NewReviewForm({newReviewFormFunction}){
         <Container id="reviewForm">
             <form onSubmit={((event) => {
                 event.preventDefault()
-
-
                 let newReview = {
                     reviews: reviewState
                 }
-
                newReviewFormFunction(newReview)
             }
-            
             )}>
                 <input type="text" placeholder='Type Review Here...' value={reviewState} onChange={(event)=>setReviewState(event.target.value)}/>
                 <button type="submit" >Add Review</button>

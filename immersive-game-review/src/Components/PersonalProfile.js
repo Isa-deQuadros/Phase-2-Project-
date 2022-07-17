@@ -4,28 +4,18 @@ import { useState } from "react";
 
 
 const Container = styled.div`
-
    padding-right: 120px;
    padding-top: 20px;
    padding-bottom: 20px;
-    // display: flex;
-    // flex-wrap: wrap;
-
-    // DONE
- 
     
 `
 const Modal = styled.div`
-    // position: fixed;
-    // background-color: #008080;
     right: 20px;
-    // DONE
     opacity: 85%;
  
 `
 const Content = styled.div`
     background-color: #935891;
-    // color: black;
     width: 400px;
     margin-right: 10px;
     border-radius: 15px;
@@ -61,7 +51,7 @@ function Profile() {
                 <img 
                 className="avatar-box"
                     alt="avatar"
-                    src="https://cdn.discordapp.com/attachments/976609407276298250/997013793211166781/MUSIC_APP.png"
+                    src="https://i.kym-cdn.com/photos/images/newsfeed/001/513/511/b18.png"
                     height={60}
                     width={120}
                     quality={100}

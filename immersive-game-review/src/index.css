@@ -107,7 +107,7 @@ code {
 
 .main-footer {
   color: white;
-  background-color: rgb(12, 7, 61);
+  background-color: #09035b;
   /* padding-top: 1em; */
   position: relative;
   bottom: 0;
@@ -146,10 +146,11 @@ code {
 .home-words{
   color: white;
   text-align: center;
+  z-index: auto;
 }
 
 .home-wrapper{
-  background-color: #1a0c54;
+  background-color: #8d72f9;
   opacity: 90%;
   border-radius: 6px;
   padding: 10px 10px 10px 10px;
