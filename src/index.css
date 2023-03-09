@@ -170,4 +170,28 @@ code {
   align-items: center;
 }
 
-  
+.stylingform {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 55%;
+  border: 3px ridge #ae9;
+  padding: 10px;
+  margin-top: 20px;
+
+
+  display: flex;
+  justify-content: center;
+
+  /* .select { 
+      margin: 7px 10px 7px 10px;
+  } */
+}
+
+.new_game_form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

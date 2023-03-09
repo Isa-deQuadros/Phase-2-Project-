@@ -1,35 +1,6 @@
 
 import React, { useState } from 'react'
-import styled from 'styled-components'
 
-
-const Container = styled.div`
-    width: 50%;
-    border: 3px ridge #ae9;
-    padding: 10px;
-    margin-top: 20px;
-
-    select{
-        margin: 7px 10px 7px 10px;
-    }
-
-    .new_game_form{
-        // text-align: center; 
-        // DONE✅
-        // display: flex;
-        // flex-wrap: wrap;
-        // justify-content: center;
-        // align-items: center;
-        // font-weight: 30px;
-
-        // display: flex;
-        // flex-wrap: wrap;
-        // justify-content: center;
-        // align-items: center;
-        // margin-top: 10px;
-        // margin-left: 200px;
-    }
-`
 
 function NewGameForm({ functionForForm }) {
     const [titleState, setTitleState] = useState("")
@@ -43,7 +14,7 @@ function NewGameForm({ functionForForm }) {
     const [trailerState, setTrailerState] = useState("")
 
     return (
-        <Container >
+        <div className='container' >
             <div className="form">
                 <form className="new_game_form" onSubmit={((event) => {
                     event.preventDefault()
@@ -90,7 +61,7 @@ function NewGameForm({ functionForForm }) {
                     <button type="submit" >Add Game</button>
                 </form>
             </div>
-        </Container>
+        </div>
     )
 }
 export default NewGameForm;
