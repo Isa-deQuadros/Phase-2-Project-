@@ -1,28 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
-import {render} from 'react-dom';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import { render } from "react-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import App from '../src/Components/App';
+import App from "../src/Components/App";
 
 // import GameCard from './Components/GameCard'
 
-
-
-
-
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-
   <React.StrictMode>
-    <BrowserRouter >
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>
-
 
   // <React.StrictMode>
   //   <BrowserRouter>
@@ -32,11 +25,10 @@ root.render(
   //       <Route path="/games" element={<MainContainer />} />
   //       <Route path="games/Form" element={<NewGameForm />} />
   //       <Route path="/profile" element={<PersonalProfile />} /> */}
-      //  /* <Route path="/gamelist" element={<GameCard />} />
+  //  /* <Route path="/gamelist" element={<GameCard />} />
   //   </Routes>
   //   </BrowserRouter>
   // </React.StrictMode>
-
 );
 
 // If you want to start measuring performance in your app, pass a function

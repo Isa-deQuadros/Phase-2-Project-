@@ -8,8 +8,7 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 .card_image {
@@ -17,22 +16,17 @@ code {
   height: 120px;
   margin: 3px;
   padding: 3px;
-
 }
 
 .GameList {
   display: grid;
   grid-template-columns: auto auto auto;
-  /* DONE */
 }
 
 .GameListBar {
   background-image: linear-gradient(to left, #ffb5e8, #b28dff, #dcd3ff, #ffc9de, #6eb5ff);
   text-align: center;
-  /* DONE */
-
 }
-
 
 .description {
   display: block;
@@ -40,7 +34,6 @@ code {
   margin-bottom: 1em;
   margin-left: 0;
   margin-right: 0;
-
 }
 
 .DataDisplay {
@@ -51,12 +44,8 @@ code {
   flex-wrap: wrap;
 }
 
-
 .card p {
   text-align: center;
-  /* width: 200px; */
-
-
 }
 
 .card {
@@ -70,12 +59,9 @@ code {
   display: flex;
   justify-content: center;
   justify-content: space-evenly;
-  /* flex-wrap: wrap;
-  flex-direction: column; */
 }
 
 #profile { 
-   /* max-width: max-content; */
   height: 60px;
   border-radius: 17px;
   align-items: center;
@@ -83,7 +69,6 @@ code {
 
 .modal-body {
   opacity: 85%;
-  /* height: max-content; */
 }
 
  .NewGameToggleButton { 
@@ -101,36 +86,29 @@ code {
   background-image: url('https://wallpaperaccess.com/full/439822.jpg');
   background-position: center;
   background-repeat: no-repeat;
-  /* background-size: contain; */
   background-size: cover;
 }
 
 .main-footer {
   color: white;
   background-color: #09035b;
-  /* padding-top: 1em; */
   position: relative;
   bottom: 0;
   width: 100%;
 }
 
-
-
-
 .avatar-box{
   background-color:white ;
   border-radius: 15px;
   width: 100px;
-  
 }
 
 .nav-menu{
   display: flex;
   flex-direction: column;
   gap: 15px;
-  
-
 } 
+
 .modal-header{
   display: flex;
   flex-wrap: wrap;
@@ -140,7 +118,6 @@ code {
 
 .link{
   text-decoration: none;
-
 }
 
 .home-words{
@@ -180,14 +157,8 @@ code {
   border: 3px ridge #ae9;
   padding: 10px;
   margin-top: 20px;
-
-
   display: flex;
   justify-content: center;
-
-  /* .select { 
-      margin: 7px 10px 7px 10px;
-  } */
 }
 
 .new_game_form {
