@@ -1,153 +1,157 @@
 import styled from "styled-components";
-import React, {useState} from "react"
+import React, { useState } from "react";
 
 import GameCard from "./GameCard";
 import ResponsivePlayer from "./ResponsivePlayer";
 import NewGameForm from "./NewGameForm";
 import Searchbar from "./SearchBar";
 
-
 const Container = styled.div`
+  border-top: 20px ridge #ae9;
+  background-image: linear-gradient(to top, #5d77b9, #181349);
 
-    border-top: 20px ridge #ae9;
-    background-image: linear-gradient( to top, #5d77b9, #181349);
+  h2 {
+    font-size: 30px;
+    color: #e60333;
+  }
 
-    h2{
-        font-size: 30px;
-        color: #e60333;
-    }
+  h3 {
+    font-size: 20px;
+    text-align: center;
+    background-color: #6d9a62;
+    border-bottom: 5px ridge #ae9;
+    margin-right: 20px;
+  }
 
-    h3{
-        font-size: 20px;
-        text-align: center;
-        background-color: #6d9a62;
-        border-bottom: 5px ridge #ae9;
-        margin-right: 20px
-    }
+  h4 {
+    color: #342d86;
+    font-size: 30px;
+    background-image: linear-gradient(
+      to left,
+      #ffb5e8,
+      #b28dff,
+      #dcd3ff,
+      #ffc9de,
+      #6eb5ff
+    );
+    text-align: center;
+    text-shadow: 1.3px 1px #1f3063;
+  }
 
-    h4{
-        color: #342d86;
-        font-size: 30px;
-        background-image: linear-gradient(to left, #ffb5e8, #b28dff, #dcd3ff,  #ffc9de, #6eb5ff);
-        text-align: center; 
-        text-shadow: 1.3px 1px #1f3063; 
-    }
-    
-    .DataDisplay{
-        margin-bottom: 20px;
-    }
+  .DataDisplay {
+    margin-bottom: 20px;
+  }
 
-    .Reviews{
-        background-color: #72a881;
-        border: 11px double #AFCBFF;
-        max-width: 35%;
-        align-self:center;
-    }
+  .Reviews {
+    background-color: #72a881;
+    border: 11px double #afcbff;
+    max-width: 35%;
+    align-self: center;
+  }
 
-    .GameList{
-        background-image: linear-gradient( to top, purple, #5362c4, #334379);
-    }
+  .GameList {
+    background-image: linear-gradient(to top, purple, #5362c4, #334379);
+  }
 
-    .GameListBarText {
-        color: #342d86;
-        text-shadow: 1.3px 1px #1f3063; 
-        font-size: 35px;
-    }
+  .GameListBarText {
+    color: #342d86;
+    text-shadow: 1.3px 1px #1f3063;
+    font-size: 35px;
+  }
 
-    .Responsive_Game_Title{
-        color: #d7bed8;
-        text-shadow: 1.3px 1px #1f3063; 
-        font-size: 35px;
-        text-align: center; 
-    }
-`
+  .Responsive_Game_Title {
+    color: #d7bed8;
+    text-shadow: 1.3px 1px #1f3063;
+    font-size: 35px;
+    text-align: center;
+  }
+`;
 
 const NewGameFormButton = styled.button`
-    background-color: #6d9a62;
-    border-radius: 3px;
-    border: 6px ridge #ae9;
-    font-size: 23.5px;
-    text-shadow: 1.5px 1px #1f3063; 
-`
+  background-color: #6d9a62;
+  border-radius: 3px;
+  border: 6px ridge #ae9;
+  font-size: 23.5px;
+  text-shadow: 1.5px 1px #1f3063;
+`;
 
-function GamesContainer({gameCardDataFromApp, functionForForm, handleingtheSearch}){
-    
-    const [title, setTitle] = useState("Title of Game")
-    const [reviews, setReviews] = useState("")
-    const [formDisplay, setFormDisplay] = useState(false)
-    const [url, setUrlState] = useState("")
-    const [descriptionToggle, setDescriptionToggle] = useState(false)
-    const [descriptionState, setDescriptionState] = useState("")
-    const [newReviewState, setNewReviewState] = useState("")
+function GamesContainer({
+  gameCardDataFromApp,
+  functionForForm,
+  handleingtheSearch,
+}) {
+  const [title, setTitle] = useState("Title of Game");
+  const [reviews, setReviews] = useState("");
+  const [formDisplay, setFormDisplay] = useState(false);
+  const [url, setUrlState] = useState("");
+  const [descriptionToggle, setDescriptionToggle] = useState(false);
+  const [descriptionState, setDescriptionState] = useState("");
+  const [newReviewState, setNewReviewState] = useState("");
 
+  function renderGame(gameName, gameReview, gameVideo, gameDescription) {
+    setTitle(gameName);
+    setReviews(gameReview);
+    setUrlState(gameVideo);
+    setDescriptionState(gameDescription);
+    setDescriptionToggle(!descriptionToggle);
+    setNewReviewState("");
+  }
 
+  function displayForm() {
+    setFormDisplay(!formDisplay);
+  }
 
-    function renderGame(gameName, gameReview, gameVideo, gameDescription){ 
-        setTitle(gameName)
-        setReviews(gameReview)
-        setUrlState(gameVideo)
-        setDescriptionState(gameDescription)
-        setDescriptionToggle(!descriptionToggle)
-        setNewReviewState("")
-        
+  function newReviewFormFunction(newReview) {
+    setNewReviewState(newReview);
+  }
 
-    }
+  return (
+    <Container>
+      <h2 className="Responsive_Game_Title"> {title} </h2>
+      <NewGameFormButton className="NewGameToggleButton" onClick={displayForm}>
+        {" "}
+        Click To Add New Game
+      </NewGameFormButton>
+      <div className="stylingform">
+        {formDisplay ? <NewGameForm functionForForm={functionForForm} /> : null}
+      </div>
+      <br />
+      <div className="DataDisplay">
+        <div className="GameTrailer">
+          <ResponsivePlayer urlState={url} />
+          <div className="AltImgB4Video"></div>
+        </div>
+        <div className="Reviews">
+          <h4> Reviews: </h4>
+          <p> 1. {reviews.first}</p>
+          <p> 2. {reviews.second}</p>
+          <p> 3. {reviews.third}</p>
+          <p> 4. {newReviewState.reviews}</p>
+          {/* some math function that turns the percentage into x number of controllers */}
+        </div>
+      </div>
 
-    function displayForm(){
-        setFormDisplay(!formDisplay)
-    }
-    
-    function newReviewFormFunction(newReview){
-        setNewReviewState(newReview)
-    }
+      <div className="GameListBar">
+        <h2 className="GameListBarText"> Game List: </h2>
+        <Searchbar handleingtheSearch={handleingtheSearch} />
 
-    return(
-        
-        <Container>
-            <h2 className="Responsive_Game_Title">  {title} </h2>
-            <NewGameFormButton className="NewGameToggleButton" onClick={displayForm}> Click To Add New Game</NewGameFormButton> 
-            <div className="stylingform">
-                {formDisplay ? <NewGameForm functionForForm={functionForForm}/> : null }
-            </div>
-            <br/>
-            <div className="DataDisplay">
-                < div className="GameTrailer" >
-
-                <ResponsivePlayer urlState={url}/>
-                <div className="AltImgB4Video">
-        
-                </div> 
-                </div>
-                    < div className="Reviews">
-                        <h4> Reviews: </h4>
-                        <p> 1. {reviews.first}</p>
-                        <p> 2. {reviews.second}</p>
-                        <p> 3. {reviews.third}</p>
-                        <p> 4. {newReviewState.reviews}</p>
-                        {/* some math function that turns the percentage into x number of controllers */}
-                    </div>
-            </div>
-                <div className="GameListBar">
-                    <h2 className="GameListBarText"> Game List: </h2> 
-                    <Searchbar handleingtheSearch={handleingtheSearch}/>        
-
-                <div className="GameList">
-                    { gameCardDataFromApp.map((mappedArrayOfGames)=>{
-                        return(   
-                            <GameCard 
-                            newReviewFormFunction={newReviewFormFunction}
-                            descriptionState={descriptionState}
-                            descriptionToggle={descriptionToggle}
-                            passingnotmapped={gameCardDataFromApp}
-                            gameCardDataFromContainer={mappedArrayOfGames}
-                            renderGame={renderGame}
-                            key={mappedArrayOfGames.id} /> 
-                        )
-                        })
-                    }
-                </div>
-                </div>
-        </Container>
-    )
+        <div className="GameList">
+          {gameCardDataFromApp.map((mappedArrayOfGames) => {
+            return (
+              <GameCard
+                newReviewFormFunction={newReviewFormFunction}
+                descriptionState={descriptionState}
+                descriptionToggle={descriptionToggle}
+                passingnotmapped={gameCardDataFromApp}
+                gameCardDataFromContainer={mappedArrayOfGames}
+                renderGame={renderGame}
+                key={mappedArrayOfGames.id}
+              />
+            );
+          })}
+        </div>
+      </div>
+    </Container>
+  );
 }
-export default GamesContainer
+export default GamesContainer;

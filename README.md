@@ -1,6 +1,6 @@
-j# IMMERSIVE GAME REVIEW
+# IMMERSIVE GAME REVIEW
 
-### BY IRIS, KEEGAN ,ISA
+### BY IRIS, KEEGAN, ISA
 
 As a user this Immersive game experience will allow you to enter the worlds
 of your favorite games using their soundtracks, as you rate and explore other games.
